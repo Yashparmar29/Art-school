@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Reviews — Create Art School</title>
+  <meta name="description" content="Read real reviews and feedback from our students and parents at Create Art School Bangalore.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__brand">🎨 Create Art School</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1 class="slide-in" data-delay="0">Student Stories &amp; Reviews</h1>
+      <p class="slide-in" data-delay="150">Discover how our students transformed from nervous beginners into confident artists sharing their craft.</p>
+    </div>
+  </header>
+
+  <!-- Reviews Section -->
+  <section class="section-padding">
+    <div class="container">
+
+      <!-- Stats Bar -->
+      <div class="stats-bar slide-in" data-delay="100">
+        <div class="stats-bar__item">
+          <span class="stats-bar__number" id="statAvgRating">4.8</span>
+          <span class="stats-bar__label">Average Rating ★</span>
+        </div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__number" id="statTotalReviews">120+</span>
+          <span class="stats-bar__label">Happy Students</span>
+        </div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__number">100%</span>
+          <span class="stats-bar__label">Hands-On Studio Learning</span>
+        </div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__number">8</span>
+          <span class="stats-bar__label">Fine Art Mediums</span>
+        </div>
+      </div>
+
+      <!-- Reviews Grid -->
+      <div class="grid grid-3" id="reviewsGrid">
+        <!-- Rendered dynamically -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Add Review Section -->
+  <section class="section-padding" style="background: #fff;">
+    <div class="container" style="max-width: 720px;">
+
+      <div class="card slide-in" data-delay="150">
+        <h2 style="text-align: center; margin-bottom: 0.5rem;">Share Your Experience</h2>
+        <p style="text-align: center; margin-bottom: 2rem; color: var(--text-light);">
+          Have you attended a class or workshop with us? We would love to hear your story!
+        </p>
+
+        <!-- Success Message -->
+        <div id="reviewSuccess" class="form-success" role="alert" style="margin-bottom: 1.5rem;">
+          🎉 Thank you for sharing your review! It has been posted to our community wall.
+        </div>
+
+        <!-- Error Message -->
+        <div id="reviewError" class="form-error" role="alert" style="margin-bottom: 1.5rem;"></div>
+
+        <form id="reviewForm" novalidate>
+
+          <!-- Name -->
+          <div class="form-group" id="grp-name">
+            <label for="rev-name">Your Name <span style="color:#d32f2f;">*</span></label>
+            <input type="text" id="rev-name" name="name" placeholder="e.g. Ananya Sharma" required>
+            <div class="error-message">Please enter your name.</div>
+          </div>
+
+          <!-- Course -->
+          <div class="form-group" id="grp-course">
+            <label for="rev-course">Course / Workshop Attended <span style="color:#d32f2f;">*</span></label>
+            <select id="rev-course" name="course" required>
+              <option value="">-- Choose Course --</option>
+              <option value="Painting">Painting</option>
+              <option value="Drawing">Drawing</option>
+              <option value="Watercolor">Watercolor</option>
+              <option value="Sketching">Sketching</option>
+              <option value="Digital Art">Digital Art</option>
+              <option value="Kids Art Classes">Kids Art Classes</option>
+              <option value="Weekend Workshops">Weekend Workshops</option>
+              <option value="Portfolio Prep">Portfolio Prep</option>
+            </select>
+            <div class="error-message">Please select the course you took.</div>
+          </div>
+
+          <!-- Rating -->
+          <div class="form-group" id="grp-rating">
+            <label>Your Rating <span style="color:#d32f2f;">*</span></label>
+            <div class="star-selector" id="starSelector" aria-label="Select star rating">
+              <button type="button" data-val="1" aria-label="1 star">★</button>
+              <button type="button" data-val="2" aria-label="2 stars">★</button>
+              <button type="button" data-val="3" aria-label="3 stars">★</button>
+              <button type="button" data-val="4" aria-label="4 stars">★</button>
+              <button type="button" data-val="5" class="active" aria-label="5 stars">★</button>
+            </div>
+            <input type="hidden" id="rev-rating" value="5">
+          </div>
+
+          <!-- Comment -->
+          <div class="form-group" id="grp-comment">
+            <label for="rev-comment">Your Review &amp; Feedback <span style="color:#d32f2f;">*</span></label>
+            <textarea id="rev-comment" name="comment" placeholder="Tell us about the instructor, the studio environment, and what you learned..." required></textarea>
+            <div class="error-message">Please write a brief comment (at least 10 characters).</div>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" id="revSubmitBtn" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1rem;">
+            Submit Your Review
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="index.html" class="footer__brand">🎨 Create Art School</a>
+        <p class="footer__desc">
+          Inspiring artists of every age and skill level. Join our interactive studio classes and weekend workshops in Bangalore.
+        </p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services &amp; Courses</a></li>
+          <li><a href="gallery.html">Student Gallery</a></li>
+          <li><a href="pricing.html">Pricing Plans</a></li>
+          <li><a href="booking.html">Book a Class</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer__links">
+          <li><a href="reviews.html">Student Reviews</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="booking.html?service=Weekend+Workshops">Weekend Workshops</a></li>
+          <li><a href="booking.html?service=Portfolio+Prep">Portfolio Mentorship</a></li>
+          <li><a href="booking.html?service=Kids+Art+Classes">Kids Studio</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Visit Our Studio</h4>
+        <p>📍 42 Brush Lane, Koramangala, Bangalore 560034</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@createartschool.in</p>
+        <p style="margin-top: 0.8rem; font-weight: 600; color: #fff;">Opening Hours:</p>
+        <p>Mon - Fri: 9:00 AM – 8:00 PM</p>
+        <p>Sat: 10:00 AM – 6:00 PM</p>
+        <p>Sun: 10:00 AM – 2:00 PM</p>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <div class="container">
+        <p>© 2024 Create Art School. All rights reserved. Built with passion for artists.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { getReviews, createReview } from './js/api.js';
+    import { observeSlideIn } from './js/main.js';
+
+    const fallbackReviews = [
+      {
+        name: 'Ananya Sharma',
+        rating: 5,
+        course: 'Painting',
+        comment: 'Create Art School has been an incredible experience! The painting classes helped me discover a style I never knew I had. The teachers are patient and truly passionate about art.'
+      },
+      {
+        name: 'Rohan Mehta',
+        rating: 4,
+        course: 'Weekend Workshops',
+        comment: 'I joined the weekend workshops and they exceeded my expectations. Each session is packed with learning and you get a finished piece to take home. Highly recommended!'
+      },
+      {
+        name: 'Priya Iyer',
+        rating: 5,
+        course: 'Kids Art Classes',
+        comment: 'My daughter loves the Kids Art Classes! She comes home every week excited to show us what she created. The instructors are wonderful with children.'
+      },
+      {
+        name: 'Vikram Desai',
+        rating: 4,
+        course: 'Drawing',
+        comment: 'The Drawing course gave me a solid foundation. I went from barely being able to sketch to creating realistic portraits in just three months. Great curriculum!'
+      },
+      {
+        name: 'Sneha Kulkarni',
+        rating: 5,
+        course: 'Portfolio Prep',
+        comment: 'Portfolio Prep was exactly what I needed for my design-school applications. The mentors provided detailed, constructive feedback and helped me curate my best work.'
+      },
+      {
+        name: 'Arjun Nair',
+        rating: 4,
+        course: 'Digital Art',
+        comment: 'Digital Art classes here are top-notch. The instructor breaks down complex tools into simple steps. I am now confident using Photoshop and Procreate for my freelance projects.'
+      }
+    ];
+
+    function renderStarString(rating) {
+      const full = '★'.repeat(rating);
+      const empty = '☆'.repeat(5 - rating);
+      return full + empty;
+    }
+
+    function renderReviewsList(reviews) {
+      const grid = document.getElementById('reviewsGrid');
+      grid.innerHTML = '';
+
+      let totalRating = 0;
+      reviews.forEach((r, idx) => {
+        totalRating += Number(r.rating) || 5;
+        const card = document.createElement('div');
+        card.className = 'review-card slide-in';
+        card.dataset.delay = String((idx % 3) * 120);
+
+        card.innerHTML = `
+          <div class="review-card__header">
+            <span class="stars">${renderStarString(r.rating)}</span>
+          </div>
+          <p class="review-card__comment">"${r.comment}"</p>
+          <div class="review-card__author">
+            <span class="review-card__name">${r.name}</span>
+            <span>${r.course}</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      if (reviews.length > 0) {
+        const avg = (totalRating / reviews.length).toFixed(1);
+        document.getElementById('statAvgRating').textContent = avg;
+        document.getElementById('statTotalReviews').textContent = `${reviews.length}+`;
+      }
+
+      observeSlideIn(grid);
+    }
+
+    // Interactive Star Selector
+    let selectedRating = 5;
+    const starBtns = document.querySelectorAll('#starSelector button');
+    const ratingInput = document.getElementById('rev-rating');
+
+    function updateStars(val) {
+      selectedRating = val;
+      ratingInput.value = val;
+      starBtns.forEach(btn => {
+        const btnVal = parseInt(btn.dataset.val, 10);
+        btn.classList.toggle('active', btnVal <= val);
+      });
+    }
+
+    starBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        updateStars(parseInt(btn.dataset.val, 10));
+      });
+      btn.addEventListener('mouseenter', () => {
+        const val = parseInt(btn.dataset.val, 10);
+        starBtns.forEach(b => {
+          b.style.color = parseInt(b.dataset.val, 10) <= val ? '#ffc107' : '#ddd';
+        });
+      });
+    });
+
+    document.getElementById('starSelector').addEventListener('mouseleave', () => {
+      starBtns.forEach(b => {
+        b.style.color = '';
+      });
+      updateStars(selectedRating);
+    });
+
+    updateStars(5);
+
+    // Initial load
+    async function loadAllReviews() {
+      try {
+        const data = await getReviews();
+        const list = data.reviews || data;
+        if (Array.isArray(list) && list.length > 0) {
+          renderReviewsList(list);
+          return;
+        }
+        renderReviewsList(fallbackReviews);
+      } catch (err) {
+        console.warn('API reviews unreachable, using fallbacks', err);
+        renderReviewsList(fallbackReviews);
+      }
+    }
+
+    loadAllReviews();
+
+    // Form Submission
+    const form = document.getElementById('reviewForm');
+    const nameInp = document.getElementById('rev-name');
+    const courseInp = document.getElementById('rev-course');
+    const commentInp = document.getElementById('rev-comment');
+    const revSubmitBtn = document.getElementById('revSubmitBtn');
+    const revSuccess = document.getElementById('reviewSuccess');
+    const revError = document.getElementById('reviewError');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      revSuccess.classList.remove('visible');
+      revError.classList.remove('visible');
+
+      const nameVal = nameInp.value.trim();
+      const courseVal = courseInp.value;
+      const commentVal = commentInp.value.trim();
+
+      let hasError = false;
+      document.getElementById('grp-name').classList.toggle('has-error', nameVal.length < 2);
+      if (nameVal.length < 2) hasError = true;
+
+      document.getElementById('grp-course').classList.toggle('has-error', !courseVal);
+      if (!courseVal) hasError = true;
+
+      document.getElementById('grp-comment').classList.toggle('has-error', commentVal.length < 10);
+      if (commentVal.length < 10) hasError = true;
+
+      if (hasError) return;
+
+      revSubmitBtn.classList.add('btn--loading');
+      revSubmitBtn.disabled = true;
+
+      const payload = {
+        name: nameVal,
+        course: courseVal,
+        rating: selectedRating,
+        comment: commentVal
+      };
+
+      try {
+        const res = await createReview(payload);
+        revSuccess.classList.add('visible');
+        form.reset();
+        updateStars(5);
+
+        // Prepend new review card
+        const grid = document.getElementById('reviewsGrid');
+        const card = document.createElement('div');
+        card.className = 'review-card slide-in slide-in--visible';
+        card.innerHTML = `
+          <div class="review-card__header">
+            <span class="stars">${renderStarString(payload.rating)}</span>
+          </div>
+          <p class="review-card__comment">"${payload.comment}"</p>
+          <div class="review-card__author">
+            <span class="review-card__name">${payload.name}</span>
+            <span>${payload.course}</span>
+          </div>
+        `;
+        grid.prepend(card);
+      } catch (err) {
+        revError.textContent = `❌ ${err.message || 'Error submitting review.'}`;
+        revError.classList.add('visible');
+      } finally {
+        revSubmitBtn.classList.remove('btn--loading');
+        revSubmitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

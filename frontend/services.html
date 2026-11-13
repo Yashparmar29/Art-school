@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses &amp; Services — Create Art School</title>
+  <meta name="description" content="Explore our fine art courses in painting, drawing, watercolor, digital illustration, and children's classes in Bangalore.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__brand">🎨 Create Art School</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1 class="slide-in" data-delay="0">Our Courses &amp; Services</h1>
+      <p class="slide-in" data-delay="150">From foundational drawing to professional portfolio coaching, find the ideal program to awaken your creative spark.</p>
+    </div>
+  </header>
+
+  <!-- Services Grid Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div id="services-status" style="text-align: center; margin-bottom: 2rem; color: var(--text-light); font-size: 0.95rem;">
+        Loading live course catalog...
+      </div>
+
+      <div class="grid grid-4" id="services-grid">
+        <!-- Rendered dynamically from API with fallback -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshop Banner -->
+  <section class="cta-banner">
+    <div class="container slide-in">
+      <h2>Not Sure Where to Begin?</h2>
+      <p>Attend our 1-hour orientation &amp; studio tour. We will help you select the ideal course for your goals.</p>
+      <a href="booking.html" class="btn btn-primary">Schedule Free Trial</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="index.html" class="footer__brand">🎨 Create Art School</a>
+        <p class="footer__desc">
+          Inspiring artists of every age and skill level. Join our interactive studio classes and weekend workshops in Bangalore.
+        </p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services &amp; Courses</a></li>
+          <li><a href="gallery.html">Student Gallery</a></li>
+          <li><a href="pricing.html">Pricing Plans</a></li>
+          <li><a href="booking.html">Book a Class</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer__links">
+          <li><a href="reviews.html">Student Reviews</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="booking.html?service=Weekend+Workshops">Weekend Workshops</a></li>
+          <li><a href="booking.html?service=Portfolio+Prep">Portfolio Mentorship</a></li>
+          <li><a href="booking.html?service=Kids+Art+Classes">Kids Studio</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Visit Our Studio</h4>
+        <p>📍 42 Brush Lane, Koramangala, Bangalore 560034</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@createartschool.in</p>
+        <p style="margin-top: 0.8rem; font-weight: 600; color: #fff;">Opening Hours:</p>
+        <p>Mon - Fri: 9:00 AM – 8:00 PM</p>
+        <p>Sat: 10:00 AM – 6:00 PM</p>
+        <p>Sun: 10:00 AM – 2:00 PM</p>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <div class="container">
+        <p>© 2024 Create Art School. All rights reserved. Built with passion for artists.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { getServices } from './js/api.js';
+    import { observeSlideIn } from './js/main.js';
+
+    const fallbackServices = [
+      {
+        title: 'Drawing',
+        description: 'Master fundamentals with graphite, charcoal, and ink. Learn perspective, shading, proportions, and still life.',
+        price: 2000,
+        duration: '1.5 hrs',
+        icon: '✏️'
+      },
+      {
+        title: 'Painting',
+        description: 'Explore acrylic and oil techniques, color theory, brush gestures, and creating vibrant canvases.',
+        price: 2500,
+        duration: '2 hrs',
+        icon: '🎨'
+      },
+      {
+        title: 'Sketching',
+        description: 'Expressive gesture drawing, urban sketching, and rapid visual storytelling on paper.',
+        price: 1800,
+        duration: '1 hr',
+        icon: '📝'
+      },
+      {
+        title: 'Watercolor',
+        description: 'Learn wet-on-wet, glazes, and atmospheric washes for luminous botanical and landscape paintings.',
+        price: 2200,
+        duration: '1.5 hrs',
+        icon: '💧'
+      },
+      {
+        title: 'Digital Art',
+        description: 'Create digital illustrations with tablet workflows, layers, digital brushes, and concept design.',
+        price: 3000,
+        duration: '2 hrs',
+        icon: '💻'
+      },
+      {
+        title: 'Kids Art Classes',
+        description: 'Nurturing creativity for ages 5–12 through clay modelling, crafts, watercolor, and storytelling.',
+        price: 1500,
+        duration: '1 hr',
+        icon: '👶'
+      },
+      {
+        title: 'Weekend Workshops',
+        description: 'Intensive single-session deep dives into specific mediums. Take home your finished artwork.',
+        price: 1000,
+        duration: '3 hrs',
+        icon: '🖌️'
+      },
+      {
+        title: 'Portfolio Prep',
+        description: 'Mentoring for entrance to fine arts & design universities. Portfolio review and critique.',
+        price: 5000,
+        duration: '2 hrs',
+        icon: '📁'
+      }
+    ];
+
+    function renderServices(services) {
+      const grid = document.getElementById('services-grid');
+      const statusEl = document.getElementById('services-status');
+      grid.innerHTML = '';
+      statusEl.style.display = 'none';
+
+      services.forEach((s, idx) => {
+        const card = document.createElement('div');
+        card.className = 'card card--featured slide-in';
+        card.dataset.delay = String((idx % 4) * 120);
+
+        const priceUnit = s.title.includes('Workshop') ? '/session' : '/mo';
+
+        card.innerHTML = `
+          <span class="card__icon">${s.icon || '🎨'}</span>
+          <h3 class="card__title">${s.title}</h3>
+          <p class="card__text">${s.description}</p>
+          <div style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.5rem;">⏱ Duration: <strong>${s.duration}</strong></div>
+          <div class="card__price">₹${Number(s.price).toLocaleString('en-IN')}<span>${priceUnit}</span></div>
+          <a href="booking.html?service=${encodeURIComponent(s.title)}" class="btn btn-primary" style="margin-top: 1.25rem; width: 100%;">Book Now</a>
+        `;
+        grid.appendChild(card);
+      });
+
+      observeSlideIn(grid);
+    }
+
+    async function init() {
+      try {
+        const data = await getServices();
+        const list = data.services || data;
+        if (Array.isArray(list) && list.length > 0) {
+          renderServices(list);
+          return;
+        }
+        renderServices(fallbackServices);
+      } catch (err) {
+        console.warn('API unreachable, using static fallback services', err);
+        renderServices(fallbackServices);
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

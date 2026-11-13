@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Gallery — Create Art School</title>
+  <meta name="description" content="Browse artwork created by students of Create Art School across painting, drawing, watercolor, and digital art.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__brand">🎨 Create Art School</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1 class="slide-in" data-delay="0">Student Artwork Gallery</h1>
+      <p class="slide-in" data-delay="150">A vibrant celebration of imagination, hard work, and growth from our students across all mediums.</p>
+    </div>
+  </header>
+
+  <!-- Gallery Section -->
+  <section class="section-padding">
+    <div class="container">
+
+      <!-- Filter Controls -->
+      <div class="gallery-filters slide-in" data-delay="100">
+        <button class="filter-btn active" data-category="all">All Works</button>
+        <button class="filter-btn" data-category="painting">Painting</button>
+        <button class="filter-btn" data-category="drawing">Drawing</button>
+        <button class="filter-btn" data-category="watercolor">Watercolor</button>
+        <button class="filter-btn" data-category="digital">Digital Art</button>
+        <button class="filter-btn" data-category="mixed">Mixed Media</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!-- 1. Painting -->
+        <div class="gallery-item slide-in" data-category="painting" data-title="Sunset Mirage by Priya" data-desc="Acrylic on Canvas — 24x36 in">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <defs>
+              <linearGradient id="art1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2B1A4A"/><stop offset="50%" stop-color="#7B1FA2"/><stop offset="100%" stop-color="#FF7A00"/></linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#art1)"/>
+            <circle cx="200" cy="180" r="100" fill="#FFE082" opacity="0.8"/>
+            <path d="M 0 320 Q 120 240 200 300 T 400 310 L 400 400 L 0 400 Z" fill="#1A0F2E"/>
+            <path d="M 0 350 Q 200 290 400 360 L 400 400 L 0 400 Z" fill="#2B1A4A"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Sunset Mirage • Painting</span>
+          </div>
+        </div>
+
+        <!-- 2. Drawing -->
+        <div class="gallery-item slide-in" data-category="drawing" data-title="Charcoal Portrait by Vikram" data-desc="Vine Charcoal & White Chalk on Grey Paper">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <rect width="400" height="400" fill="#E0E0E0"/>
+            <ellipse cx="200" cy="190" rx="90" ry="120" fill="#424242"/>
+            <ellipse cx="200" cy="170" rx="80" ry="105" fill="#616161"/>
+            <path d="M 160 160 Q 200 190 240 160" stroke="#212121" stroke-width="6" fill="none"/>
+            <circle cx="170" cy="140" r="10" fill="#212121"/>
+            <circle cx="230" cy="140" r="10" fill="#212121"/>
+            <path d="M 180 220 Q 200 240 220 220" stroke="#FF7A00" stroke-width="4" fill="none"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Charcoal Study • Drawing</span>
+          </div>
+        </div>
+
+        <!-- 3. Watercolor -->
+        <div class="gallery-item slide-in" data-category="watercolor" data-title="Spring Flora by Neha" data-desc="Watercolor on Arches 300gsm cold press">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <defs>
+              <linearGradient id="art3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E1F5FE"/><stop offset="100%" stop-color="#FFF3E0"/></linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#art3)"/>
+            <circle cx="140" cy="160" r="60" fill="#FF7A00" opacity="0.6"/>
+            <circle cx="240" cy="190" r="75" fill="#E91E63" opacity="0.5"/>
+            <circle cx="190" cy="230" r="50" fill="#9C27B0" opacity="0.5"/>
+            <path d="M 200 400 Q 210 260 190 180" stroke="#388E3C" stroke-width="8" fill="none" opacity="0.7"/>
+            <path d="M 200 350 Q 150 280 140 240" stroke="#4CAF50" stroke-width="5" fill="none" opacity="0.6"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Spring Flora • Watercolor</span>
+          </div>
+        </div>
+
+        <!-- 4. Digital -->
+        <div class="gallery-item slide-in" data-category="digital" data-title="Cyber Cityscape by Arjun" data-desc="Digital illustration — Procreate">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <rect width="400" height="400" fill="#120524"/>
+            <polygon points="40,400 40,200 120,200 120,400" fill="#2B1A4A"/>
+            <polygon points="140,400 140,140 220,140 220,400" fill="#3D2A65"/>
+            <polygon points="240,400 240,180 320,180 320,400" fill="#2B1A4A"/>
+            <polygon points="340,400 340,240 390,240 390,400" fill="#1A0F2E"/>
+            <circle cx="280" cy="90" r="45" fill="#FF7A00"/>
+            <line x1="0" y1="400" x2="400" y2="400" stroke="#00E5FF" stroke-width="6"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Cyber Cityscape • Digital</span>
+          </div>
+        </div>
+
+        <!-- 5. Painting -->
+        <div class="gallery-item slide-in" data-category="painting" data-title="Blue Haven by Meera" data-desc="Oil on Canvas — 30x30 in">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <defs>
+              <linearGradient id="art5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0D47A1"/><stop offset="100%" stop-color="#2B1A4A"/></linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#art5)"/>
+            <circle cx="200" cy="200" r="120" stroke="#FF7A00" stroke-width="12" fill="none" opacity="0.6"/>
+            <circle cx="200" cy="200" r="80" stroke="#FFF" stroke-width="6" fill="none" opacity="0.4"/>
+            <circle cx="200" cy="200" r="40" fill="#FF7A00"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Blue Haven • Painting</span>
+          </div>
+        </div>
+
+        <!-- 6. Mixed Media -->
+        <div class="gallery-item slide-in" data-category="mixed" data-title="Collage &amp; Textures by Rahul" data-desc="Found paper, ink, &amp; gold leaf on board">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <rect width="400" height="400" fill="#FAF5EF"/>
+            <rect x="60" y="60" width="180" height="220" fill="#2B1A4A" opacity="0.85"/>
+            <rect x="180" y="140" width="160" height="180" fill="#FF7A00" opacity="0.7"/>
+            <circle cx="260" cy="120" r="45" fill="#D4AF37"/>
+            <line x1="80" y1="320" x2="320" y2="80" stroke="#2B1A4A" stroke-width="4"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Texture Rhythm • Mixed</span>
+          </div>
+        </div>
+
+        <!-- 7. Drawing -->
+        <div class="gallery-item slide-in" data-category="drawing" data-title="Botanical Ink Pen by Kavita" data-desc="Micron pens on Bristol smooth">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <rect width="400" height="400" fill="#FDFBF7"/>
+            <path d="M 200 380 Q 190 200 230 60" stroke="#2B1A4A" stroke-width="5" fill="none"/>
+            <path d="M 200 300 C 130 260 120 180 180 180 C 195 240 205 270 200 300" fill="#2B1A4A" opacity="0.7"/>
+            <path d="M 210 240 C 270 210 290 140 220 130 C 210 180 205 210 210 240" fill="#FF7A00" opacity="0.7"/>
+            <circle cx="230" cy="60" r="14" fill="#2B1A4A"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Monstera Ink • Drawing</span>
+          </div>
+        </div>
+
+        <!-- 8. Watercolor -->
+        <div class="gallery-item slide-in" data-category="watercolor" data-title="Mountain Mist by Sahil" data-desc="Layered wet-in-wet wash">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <rect width="400" height="400" fill="#E8EAF6"/>
+            <polygon points="0,400 120,240 260,350 400,200 400,400" fill="#9FA8DA" opacity="0.6"/>
+            <polygon points="0,400 180,280 320,380 400,310 400,400" fill="#5C6BC0" opacity="0.7"/>
+            <polygon points="60,400 240,320 380,400" fill="#2B1A4A" opacity="0.85"/>
+            <circle cx="80" cy="120" r="35" fill="#FF7A00" opacity="0.5"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Mountain Mist • Watercolor</span>
+          </div>
+        </div>
+
+        <!-- 9. Digital -->
+        <div class="gallery-item slide-in" data-category="digital" data-title="Galactic Nomad by Divya" data-desc="Digital Concept Art">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <defs>
+              <radialGradient id="art9" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#7B1FA2"/><stop offset="100%" stop-color="#0D0221"/></radialGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#art9)"/>
+            <circle cx="200" cy="200" r="90" fill="none" stroke="#FF7A00" stroke-width="4"/>
+            <circle cx="200" cy="200" r="120" fill="none" stroke="#E040FB" stroke-width="2" stroke-dasharray="10,15"/>
+            <circle cx="200" cy="200" r="30" fill="#FFF"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Galactic Core • Digital</span>
+          </div>
+        </div>
+
+        <!-- 10. Painting -->
+        <div class="gallery-item slide-in" data-category="painting" data-title="Autumn Glow by Sanjay" data-desc="Impasto Acrylic with Palette Knife">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <defs>
+              <linearGradient id="art10" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF7A00"/><stop offset="100%" stop-color="#D84315"/></linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#art10)"/>
+            <rect x="40" y="40" width="320" height="320" fill="none" stroke="#2B1A4A" stroke-width="12"/>
+            <circle cx="200" cy="200" r="70" fill="#2B1A4A"/>
+            <path d="M 120 200 L 280 200" stroke="#FFF" stroke-width="6"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Autumn Glow • Painting</span>
+          </div>
+        </div>
+
+        <!-- 11. Mixed Media -->
+        <div class="gallery-item slide-in" data-category="mixed" data-title="Metamorphosis by Deepa" data-desc="Clay relief &amp; acrylics on wood">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <rect width="400" height="400" fill="#2B1A4A"/>
+            <circle cx="150" cy="200" r="90" fill="#FF7A00" opacity="0.8"/>
+            <circle cx="250" cy="200" r="90" fill="#3D2A65" opacity="0.8"/>
+            <ellipse cx="200" cy="200" rx="35" ry="70" fill="#FFF" opacity="0.6"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Metamorphosis • Mixed</span>
+          </div>
+        </div>
+
+        <!-- 12. Watercolor -->
+        <div class="gallery-item slide-in" data-category="watercolor" data-title="Seaside Solitude by Kiran" data-desc="Cobalt blue &amp; sepia wash">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <defs>
+              <linearGradient id="art12" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E0F7FA"/><stop offset="60%" stop-color="#80DEEA"/><stop offset="100%" stop-color="#2B1A4A"/></linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#art12)"/>
+            <circle cx="300" cy="100" r="30" fill="#FF7A00"/>
+            <path d="M 60 280 Q 200 240 340 280" stroke="#FFF" stroke-width="4" fill="none"/>
+            <polygon points="180,260 200,220 210,260" fill="#2B1A4A"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Seaside • Watercolor</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image Lightbox">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous artwork">&#10094;</button>
+    <div class="lightbox__content" id="lightboxContent">
+      <!-- Injected by JS -->
+    </div>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next artwork">&#10095;</button>
+  </div>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container slide-in">
+      <h2>Create Your Own Masterpiece</h2>
+      <p>Whether you want to exhibit in galleries or paint for peace of mind, our doors are open.</p>
+      <a href="booking.html" class="btn btn-primary">Enroll in a Class</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="index.html" class="footer__brand">🎨 Create Art School</a>
+        <p class="footer__desc">
+          Inspiring artists of every age and skill level. Join our interactive studio classes and weekend workshops in Bangalore.
+        </p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services &amp; Courses</a></li>
+          <li><a href="gallery.html">Student Gallery</a></li>
+          <li><a href="pricing.html">Pricing Plans</a></li>
+          <li><a href="booking.html">Book a Class</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer__links">
+          <li><a href="reviews.html">Student Reviews</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="booking.html?service=Weekend+Workshops">Weekend Workshops</a></li>
+          <li><a href="booking.html?service=Portfolio+Prep">Portfolio Mentorship</a></li>
+          <li><a href="booking.html?service=Kids+Art+Classes">Kids Studio</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Visit Our Studio</h4>
+        <p>📍 42 Brush Lane, Koramangala, Bangalore 560034</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@createartschool.in</p>
+        <p style="margin-top: 0.8rem; font-weight: 600; color: #fff;">Opening Hours:</p>
+        <p>Mon - Fri: 9:00 AM – 8:00 PM</p>
+        <p>Sat: 10:00 AM – 6:00 PM</p>
+        <p>Sun: 10:00 AM – 2:00 PM</p>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <div class="container">
+        <p>© 2024 Create Art School. All rights reserved. Built with passion for artists.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import './js/main.js';
+
+    // 1. Category Filtering
+    const filterButtons = document.querySelectorAll('.gallery-filters .filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const cat = btn.dataset.category;
+        galleryItems.forEach(item => {
+          if (cat === 'all' || item.dataset.category === cat) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 2. Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightboxContent');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+
+    let visibleItems = [];
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      visibleItems = Array.from(galleryItems).filter(item => !item.classList.contains('hidden'));
+      currentIndex = index;
+      renderLightboxItem();
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function renderLightboxItem() {
+      const item = visibleItems[currentIndex];
+      if (!item) return;
+      const svg = item.querySelector('svg').cloneNode(true);
+      const title = item.dataset.title || 'Student Artwork';
+      const desc = item.dataset.desc || '';
+
+      lightboxContent.innerHTML = '';
+      lightboxContent.appendChild(svg);
+
+      const caption = document.createElement('div');
+      caption.style.textAlign = 'center';
+      caption.style.color = '#fff';
+      caption.style.marginTop = '1rem';
+      caption.innerHTML = `<h3 style="color:#FF7A00; font-family: Caveat, cursive; font-size: 1.8rem; margin-bottom: 0.25rem;">${title}</h3><p style="color: rgba(255,255,255,0.8);">${desc}</p>`;
+      lightboxContent.appendChild(caption);
+    }
+
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        visibleItems = Array.from(galleryItems).filter(el => !el.classList.contains('hidden'));
+        const idx = visibleItems.indexOf(item);
+        if (idx !== -1) openLightbox(idx);
+      });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+      renderLightboxItem();
+    });
+    lightboxNext.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % visibleItems.length;
+      renderLightboxItem();
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') lightboxPrev.click();
+      if (e.key === 'ArrowRight') lightboxNext.click();
+    });
+  </script>
+</body>
+</html>

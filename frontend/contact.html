@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Create Art School</title>
+  <meta name="description" content="Get in touch with Create Art School in Koramangala, Bangalore. Find directions, telephone, opening hours, or send us a message.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__brand">🎨 Create Art School</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1 class="slide-in" data-delay="0">Connect With Our Studio</h1>
+      <p class="slide-in" data-delay="150">We'd love to show you around our creative space or answer any questions about our curriculum.</p>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="section-padding">
+    <div class="container">
+
+      <div class="contact-grid">
+
+        <!-- Form Column -->
+        <div class="card slide-in" data-delay="100">
+          <h2 style="margin-bottom: 0.5rem;">Send a Message</h2>
+          <p style="margin-bottom: 1.5rem; color: var(--text-light);">
+            Have an enquiry about private tutoring, corporate art team-bonding, or admissions? Drop us a note!
+          </p>
+
+          <div id="contactSuccess" class="form-success" role="alert" style="margin-bottom: 1.5rem;">
+            ✉️ Thank you! Your message has been sent successfully. We will reply within 24 hours.
+          </div>
+
+          <div id="contactError" class="form-error" role="alert" style="margin-bottom: 1.5rem;"></div>
+
+          <form id="contactForm" novalidate>
+
+            <div class="form-group" id="cnt-grp-name">
+              <label for="cnt-name">Your Full Name <span style="color:#d32f2f;">*</span></label>
+              <input type="text" id="cnt-name" name="name" placeholder="e.g. Rahul Verma" required>
+              <div class="error-message">Please enter your name.</div>
+            </div>
+
+            <div class="form-group" id="cnt-grp-email">
+              <label for="cnt-email">Email Address <span style="color:#d32f2f;">*</span></label>
+              <input type="email" id="cnt-email" name="email" placeholder="e.g. rahul@example.com" required>
+              <div class="error-message">Please enter a valid email address.</div>
+            </div>
+
+            <div class="form-group" id="cnt-grp-message">
+              <label for="cnt-message">Your Message <span style="color:#d32f2f;">*</span></label>
+              <textarea id="cnt-message" name="message" placeholder="How can we assist you?" required></textarea>
+              <div class="error-message">Please enter your message (at least 10 characters).</div>
+            </div>
+
+            <button type="submit" id="cntSubmitBtn" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1rem;">
+              Send Message
+            </button>
+
+          </form>
+        </div>
+
+        <!-- Info & Map Column -->
+        <div class="slide-in" data-delay="200">
+          <div class="card" style="margin-bottom: 2rem;">
+            <h2 style="margin-bottom: 1.5rem;">Studio Details</h2>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon">📍</div>
+              <div>
+                <h4>Address</h4>
+                <p>42 Brush Lane, 4th Block, Koramangala<br>Bangalore, Karnataka 560034</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon">📞</div>
+              <div>
+                <h4>Phone &amp; WhatsApp</h4>
+                <p>+91 98765 43210 / +91 80 4123 4567</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon">✉️</div>
+              <div>
+                <h4>Email Support</h4>
+                <p>hello@createartschool.in<br>admissions@createartschool.in</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon">🕒</div>
+              <div>
+                <h4>Studio Opening Hours</h4>
+                <p><strong>Monday – Friday:</strong> 9:00 AM – 8:00 PM<br>
+                   <strong>Saturday:</strong> 10:00 AM – 6:00 PM<br>
+                   <strong>Sunday:</strong> 10:00 AM – 2:00 PM</p>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+              <h4 style="margin-bottom: 0.5rem;">Follow Our Community</h4>
+              <div class="social-links">
+                <a href="#" aria-label="Instagram">📸</a>
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="YouTube">▶️</a>
+                <a href="#" aria-label="Pinterest">📌</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Embedded Map -->
+          <div class="map-container">
+            <iframe
+              title="Create Art School Koramangala Location Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15555.276274474716!2d77.6186414163909!3d12.934789500000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14494c25f56b%3A0xb36b5ec6a21855e9!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="index.html" class="footer__brand">🎨 Create Art School</a>
+        <p class="footer__desc">
+          Inspiring artists of every age and skill level. Join our interactive studio classes and weekend workshops in Bangalore.
+        </p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services &amp; Courses</a></li>
+          <li><a href="gallery.html">Student Gallery</a></li>
+          <li><a href="pricing.html">Pricing Plans</a></li>
+          <li><a href="booking.html">Book a Class</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer__links">
+          <li><a href="reviews.html">Student Reviews</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="booking.html?service=Weekend+Workshops">Weekend Workshops</a></li>
+          <li><a href="booking.html?service=Portfolio+Prep">Portfolio Mentorship</a></li>
+          <li><a href="booking.html?service=Kids+Art+Classes">Kids Studio</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Visit Our Studio</h4>
+        <p>📍 42 Brush Lane, Koramangala, Bangalore 560034</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@createartschool.in</p>
+        <p style="margin-top: 0.8rem; font-weight: 600; color: #fff;">Opening Hours:</p>
+        <p>Mon - Fri: 9:00 AM – 8:00 PM</p>
+        <p>Sat: 10:00 AM – 6:00 PM</p>
+        <p>Sun: 10:00 AM – 2:00 PM</p>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <div class="container">
+        <p>© 2024 Create Art School. All rights reserved. Built with passion for artists.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { sendContact } from './js/api.js';
+    import './js/main.js';
+
+    const form = document.getElementById('contactForm');
+    const nameInp = document.getElementById('cnt-name');
+    const emailInp = document.getElementById('cnt-email');
+    const msgInp = document.getElementById('cnt-message');
+    const submitBtn = document.getElementById('cntSubmitBtn');
+    const successBox = document.getElementById('contactSuccess');
+    const errorBox = document.getElementById('contactError');
+
+    function isValidEmail(email) {
+      return /^\S+@\S+\.\S+$/.test(email);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      successBox.classList.remove('visible');
+      errorBox.classList.remove('visible');
+
+      const nameVal = nameInp.value.trim();
+      const emailVal = emailInp.value.trim();
+      const msgVal = msgInp.value.trim();
+
+      let hasError = false;
+
+      const isNameValid = nameVal.length >= 2;
+      document.getElementById('cnt-grp-name').classList.toggle('has-error', !isNameValid);
+      if (!isNameValid) hasError = true;
+
+      const isEmailValid = isValidEmail(emailVal);
+      document.getElementById('cnt-grp-email').classList.toggle('has-error', !isEmailValid);
+      if (!isEmailValid) hasError = true;
+
+      const isMsgValid = msgVal.length >= 10;
+      document.getElementById('cnt-grp-message').classList.toggle('has-error', !isMsgValid);
+      if (!isMsgValid) hasError = true;
+
+      if (hasError) return;
+
+      submitBtn.classList.add('btn--loading');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending Message...';
+
+      try {
+        const res = await sendContact({
+          name: nameVal,
+          email: emailVal,
+          message: msgVal
+        });
+        if (res.success) {
+          form.reset();
+          successBox.classList.add('visible');
+          successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error(res.message || 'Submission failed');
+        }
+      } catch (err) {
+        errorBox.textContent = `❌ ${err.message || 'Unable to send message at this time. Please call us directly at +91 98765 43210.'}`;
+        errorBox.classList.add('visible');
+      } finally {
+        submitBtn.classList.remove('btn--loading');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  </script>
+</body>
+</html>

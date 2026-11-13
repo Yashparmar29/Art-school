@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Class — Create Art School</title>
+  <meta name="description" content="Reserve your art class or free trial session at Create Art School. Select your course, choose a date, and begin creating.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__brand">🎨 Create Art School</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1 class="slide-in" data-delay="0">Book Your Art Session</h1>
+      <p class="slide-in" data-delay="150">Reserve your complimentary trial seat or enroll in a full course. We look forward to creating with you!</p>
+    </div>
+  </header>
+
+  <!-- Booking Section -->
+  <section class="section-padding">
+    <div class="container" style="max-width: 780px;">
+
+      <div class="card slide-in" data-delay="100">
+        <h2 style="margin-bottom: 0.5rem; text-align: center;">Class Reservation Form</h2>
+        <p style="text-align: center; margin-bottom: 2rem; color: var(--text-light);">
+          Fill out the details below. Our studio coordinator will call to confirm your schedule.
+        </p>
+
+        <!-- Success Message -->
+        <div id="bookingSuccess" class="form-success" role="alert" style="margin-bottom: 1.5rem;">
+          <h3 style="color: #2e7d32; font-size: 1.5rem; margin-bottom: 0.25rem;">🎉 Booking Confirmed!</h3>
+          <p style="margin: 0; color: #2e7d32;">We have received your class request. We'll contact you shortly to confirm your class schedule!</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="bookingError" class="form-error" role="alert" style="margin-bottom: 1.5rem;">
+          <!-- Dynamically populated -->
+        </div>
+
+        <form id="bookingForm" novalidate>
+
+          <!-- Full Name -->
+          <div class="form-group" id="group-name">
+            <label for="name">Full Name <span style="color:#d32f2f;">*</span></label>
+            <input type="text" id="name" name="name" placeholder="e.g. Priya Sharma" required autocomplete="name">
+            <div class="error-message" id="err-name">Please enter your full name.</div>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="form-group" id="group-phone">
+            <label for="phone">Phone Number (10 digits) <span style="color:#d32f2f;">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 9876543210" maxlength="10" required autocomplete="tel">
+            <div class="error-message" id="err-phone">Please enter a valid 10-digit Indian phone number (starting with 6, 7, 8, or 9).</div>
+          </div>
+
+          <!-- Service Selection -->
+          <div class="form-group" id="group-service">
+            <label for="service">Select Course or Plan <span style="color:#d32f2f;">*</span></label>
+            <select id="service" name="service" required>
+              <option value="">-- Choose an option --</option>
+              <optgroup label="Core Courses">
+                <option value="Drawing">Drawing (Fundamentals &amp; Charcoal)</option>
+                <option value="Painting">Painting (Acrylic &amp; Oil)</option>
+                <option value="Sketching">Sketching &amp; Gesture Art</option>
+                <option value="Watercolor">Watercolor &amp; Botanicals</option>
+                <option value="Digital Art">Digital Art &amp; Illustration</option>
+                <option value="Kids Art Classes">Kids Art Classes (Ages 5–12)</option>
+                <option value="Weekend Workshops">Weekend Workshops</option>
+                <option value="Portfolio Prep">Portfolio Prep &amp; Mentorship</option>
+              </optgroup>
+              <optgroup label="Monthly Membership Plans">
+                <option value="Starter Plan">Starter Plan (₹2,999/mo)</option>
+                <option value="Creator Plan">Creator Plan — Most Popular (₹5,499/mo)</option>
+                <option value="Pro Plan">Pro Plan (₹8,999/mo)</option>
+              </optgroup>
+              <optgroup label="Free Trial">
+                <option value="Free Trial Class">Free Trial Class (60 min)</option>
+              </optgroup>
+            </select>
+            <div class="error-message" id="err-service">Please select a course or plan.</div>
+          </div>
+
+          <!-- Date -->
+          <div class="form-group" id="group-date">
+            <label for="date">Preferred Starting Date <span style="color:#d32f2f;">*</span></label>
+            <input type="date" id="date" name="date" required>
+            <div class="error-message" id="err-date">Please select a valid date (today or future).</div>
+          </div>
+
+          <!-- Optional Note -->
+          <div class="form-group">
+            <label for="note">Any Prior Experience or Special Requests? (Optional)</label>
+            <textarea id="note" name="note" placeholder="Tell us about your art background, preferred timings (morning/evening), or anything else you'd like us to know..."></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1rem;">
+            Confirm Booking
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="index.html" class="footer__brand">🎨 Create Art School</a>
+        <p class="footer__desc">
+          Inspiring artists of every age and skill level. Join our interactive studio classes and weekend workshops in Bangalore.
+        </p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services &amp; Courses</a></li>
+          <li><a href="gallery.html">Student Gallery</a></li>
+          <li><a href="pricing.html">Pricing Plans</a></li>
+          <li><a href="booking.html">Book a Class</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer__links">
+          <li><a href="reviews.html">Student Reviews</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="booking.html?service=Weekend+Workshops">Weekend Workshops</a></li>
+          <li><a href="booking.html?service=Portfolio+Prep">Portfolio Mentorship</a></li>
+          <li><a href="booking.html?service=Kids+Art+Classes">Kids Studio</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Visit Our Studio</h4>
+        <p>📍 42 Brush Lane, Koramangala, Bangalore 560034</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@createartschool.in</p>
+        <p style="margin-top: 0.8rem; font-weight: 600; color: #fff;">Opening Hours:</p>
+        <p>Mon - Fri: 9:00 AM – 8:00 PM</p>
+        <p>Sat: 10:00 AM – 6:00 PM</p>
+        <p>Sun: 10:00 AM – 2:00 PM</p>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <div class="container">
+        <p>© 2024 Create Art School. All rights reserved. Built with passion for artists.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { createBooking } from './js/api.js';
+    import './js/main.js';
+
+    // 1. Min date validation (set today's date as min)
+    const dateInput = document.getElementById('date');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+    dateInput.value = today;
+
+    // 2. Prefill service from URL query param ?service=...
+    const urlParams = new URLSearchParams(window.location.search);
+    const prefillService = urlParams.get('service');
+    const serviceSelect = document.getElementById('service');
+
+    if (prefillService) {
+      for (const option of serviceSelect.options) {
+        if (option.value.toLowerCase() === prefillService.toLowerCase() ||
+            option.value.toLowerCase().includes(prefillService.toLowerCase())) {
+          option.selected = true;
+          break;
+        }
+      }
+    }
+
+    // 3. Validation helpers
+    const form = document.getElementById('bookingForm');
+    const nameInput = document.getElementById('name');
+    const phoneInput = document.getElementById('phone');
+    const submitBtn = document.getElementById('submitBtn');
+    const successBox = document.getElementById('bookingSuccess');
+    const errorBox = document.getElementById('bookingError');
+
+    function validateName() {
+      const group = document.getElementById('group-name');
+      const valid = nameInput.value.trim().length >= 2;
+      group.classList.toggle('has-error', !valid);
+      return valid;
+    }
+
+    function validatePhone() {
+      const group = document.getElementById('group-phone');
+      const phoneVal = phoneInput.value.trim();
+      const valid = /^[6-9]\d{9}$/.test(phoneVal);
+      group.classList.toggle('has-error', !valid);
+      return valid;
+    }
+
+    function validateService() {
+      const group = document.getElementById('group-service');
+      const valid = Boolean(serviceSelect.value);
+      group.classList.toggle('has-error', !valid);
+      return valid;
+    }
+
+    function validateDate() {
+      const group = document.getElementById('group-date');
+      const val = dateInput.value;
+      const valid = Boolean(val) && val >= today;
+      group.classList.toggle('has-error', !valid);
+      return valid;
+    }
+
+    nameInput.addEventListener('blur', validateName);
+    phoneInput.addEventListener('blur', validatePhone);
+    serviceSelect.addEventListener('change', validateService);
+    dateInput.addEventListener('change', validateDate);
+
+    // 4. Form Submission
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      successBox.classList.remove('visible');
+      errorBox.classList.remove('visible');
+
+      const isNameValid = validateName();
+      const isPhoneValid = validatePhone();
+      const isServiceValid = validateService();
+      const isDateValid = validateDate();
+
+      if (!isNameValid || !isPhoneValid || !isServiceValid || !isDateValid) {
+        return;
+      }
+
+      // Payload
+      const payload = {
+        name: nameInput.value.trim(),
+        phone: phoneInput.value.trim(),
+        service: serviceSelect.value,
+        date: dateInput.value,
+        note: document.getElementById('note').value.trim()
+      };
+
+      // Loading state
+      submitBtn.classList.add('btn--loading');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Processing Booking...';
+
+      try {
+        const response = await createBooking(payload);
+        if (response.success) {
+          form.reset();
+          dateInput.value = today;
+          successBox.classList.add('visible');
+          successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error(response.message || 'Booking failed');
+        }
+      } catch (err) {
+        console.error('Booking failed:', err);
+        errorBox.textContent = `❌ ${err.message || 'Unable to connect to server. Please try again or call us directly at +91 98765 43210.'}`;
+        errorBox.classList.add('visible');
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } finally {
+        submitBtn.classList.remove('btn--loading');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Confirm Booking';
+      }
+    });
+  </script>
+</body>
+</html>
