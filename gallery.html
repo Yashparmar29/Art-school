@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Gallery — Art School</title>
+  <meta name="description" content="Browse authentic student artwork created at Art School Bangalore across painting, drawing, watercolor, and digital art.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__brand" aria-label="Art School Home"><img src="assets/logo.svg" alt="Art School Logo" class="navbar__logo"></a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--secondary); font-weight: 700; margin-bottom: 0.5rem;" class="slide-in" data-delay="0">
+        Student Showcase • Annual Curated Exhibition
+      </p>
+      <h1 class="slide-in" data-delay="100">Student Artwork Gallery</h1>
+      <p class="slide-in" data-delay="150" style="max-width: 680px; margin: 0 auto;">
+        A vibrant celebration of imagination, hard work, and technical growth created right here on our Koramangala easels across all fine-art disciplines.
+      </p>
+    </div>
+  </header>
+
+  <!-- Gallery Section -->
+  <section class="section-padding" style="background: var(--bg);">
+    <div class="container">
+
+      <!-- Filter Controls -->
+      <div class="gallery-filters slide-in" data-delay="100">
+        <button class="filter-btn active" data-category="all">All Works (12)</button>
+        <button class="filter-btn" data-category="painting">Painting</button>
+        <button class="filter-btn" data-category="drawing">Drawing &amp; Charcoal</button>
+        <button class="filter-btn" data-category="watercolor">Watercolor</button>
+        <button class="filter-btn" data-category="digital">Digital Art</button>
+        <button class="filter-btn" data-category="mixed">Mixed Media</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!-- 1. Painting -->
+        <div class="gallery-item slide-in" data-category="painting" data-title="Sunset Mirage over Nandi Hills" data-artist="Priya Sharma (Adult Beginner, 4 months)" data-desc="Heavy-body acrylic on stretched linen canvas — 24x36 in. Explores warm impasto palette knife layers and atmospheric twilight gradients.">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <defs>
+              <linearGradient id="art1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1A0F2E"/>
+                <stop offset="35%" stop-color="#6A1B9A"/>
+                <stop offset="65%" stop-color="#E65100"/>
+                <stop offset="100%" stop-color="#FFD54F"/>
+              </linearGradient>
+              <radialGradient id="sun1" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FFF9C4"/>
+                <stop offset="60%" stop-color="#FFA726"/>
+                <stop offset="100%" stop-color="#E65100" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#art1)"/>
+            <circle cx="200" cy="190" r="85" fill="url(#sun1)"/>
+            <circle cx="200" cy="190" r="45" fill="#FFFDE7"/>
+            <path d="M 0 310 Q 90 230 180 270 T 400 240 L 400 400 L 0 400 Z" fill="#2B1A4A" opacity="0.9"/>
+            <path d="M 0 340 Q 140 280 240 330 T 400 320 L 400 400 L 0 400 Z" fill="#150B24"/>
+            <polygon points="120,400 135,320 145,400" fill="#0D0618"/>
+            <polygon points="135,400 145,305 155,400" fill="#0D0618"/>
+            <polygon points="270,400 280,335 290,400" fill="#0D0618"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Sunset Mirage • Acrylic on Canvas</span>
+          </div>
+        </div>
+
+        <!-- 2. Drawing -->
+        <div class="gallery-item slide-in" data-category="drawing" data-title="Chiaroscuro Charcoal Study" data-artist="Vikram Desai (Drawing Foundations)" data-desc="Vine charcoal, compressed carbon &amp; titanium white highlight on Strathmore toned grey paper. Focus on bone structure and dramatic side-lighting.">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <defs>
+              <radialGradient id="shade2" cx="35%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#FAFAFA"/>
+                <stop offset="40%" stop-color="#9E9E9E"/>
+                <stop offset="85%" stop-color="#212121"/>
+                <stop offset="100%" stop-color="#0A0A0A"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="400" fill="#BDBDBD"/>
+            <circle cx="200" cy="200" r="140" fill="url(#shade2)"/>
+            <ellipse cx="230" cy="330" rx="140" ry="25" fill="#212121" opacity="0.6"/>
+            <path d="M 120 130 Q 150 110 180 130" stroke="#FFF" stroke-width="4" fill="none" opacity="0.8"/>
+            <path d="M 230 250 Q 280 290 320 250" stroke="#111" stroke-width="6" fill="none"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Charcoal Study • Drawing</span>
+          </div>
+        </div>
+
+        <!-- 3. Watercolor -->
+        <div class="gallery-item slide-in" data-category="watercolor" data-title="Lalbagh Botanical Flora" data-artist="Neha Kulkarni (Watercolor Course)" data-desc="Artist-grade Sennelier watercolors on Arches 300gsm cold-press rag paper. Layered translucent wet-in-wet petals with delicate botanical dry-brush veins.">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <defs>
+              <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#F1F8E9"/>
+                <stop offset="100%" stop-color="#E8F5E9"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#bg3)"/>
+            <path d="M 200 400 Q 210 240 180 160" stroke="#2E7D32" stroke-width="6" fill="none" opacity="0.8"/>
+            <path d="M 195 290 Q 130 240 110 210 Q 140 270 195 290" fill="#43A047" opacity="0.75"/>
+            <path d="M 190 230 Q 260 190 280 160 Q 240 220 190 230" fill="#388E3C" opacity="0.75"/>
+            <circle cx="160" cy="140" r="45" fill="#E91E63" opacity="0.7"/>
+            <circle cx="210" cy="130" r="50" fill="#FF5722" opacity="0.65"/>
+            <circle cx="180" cy="170" r="40" fill="#9C27B0" opacity="0.6"/>
+            <circle cx="185" cy="145" r="22" fill="#FDD835"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Lalbagh Flora • Watercolor</span>
+          </div>
+        </div>
+
+        <!-- 4. Digital -->
+        <div class="gallery-item slide-in" data-category="digital" data-title="Cyber Bangalore 2099" data-artist="Arjun Nair (Digital Illustration)" data-desc="Digital painting in Apple iPad Pro &amp; Procreate. Isometric architectural lighting with multi-layered specular reflections and atmospheric neon haze.">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <defs>
+              <linearGradient id="sky4" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#050014"/>
+                <stop offset="100%" stop-color="#240046"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#sky4)"/>
+            <polygon points="50,400 50,180 130,180 130,400" fill="#10002B"/>
+            <polygon points="140,400 140,120 230,120 230,400" fill="#240046"/>
+            <polygon points="240,400 240,160 330,160 330,400" fill="#3C096C"/>
+            <circle cx="280" cy="80" r="40" fill="#FF7A00"/>
+            <line x1="50" y1="220" x2="130" y2="220" stroke="#00F5D4" stroke-width="3"/>
+            <line x1="140" y1="160" x2="230" y2="160" stroke="#FF007F" stroke-width="3"/>
+            <line x1="240" y1="200" x2="330" y2="200" stroke="#00BBF9" stroke-width="3"/>
+            <line x1="0" y1="380" x2="400" y2="380" stroke="#FF7A00" stroke-width="4"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Cyber Cityscape • Digital Art</span>
+          </div>
+        </div>
+
+        <!-- 5. Painting -->
+        <div class="gallery-item slide-in" data-category="painting" data-title="Oceanic Harmony in Cobalt" data-artist="Meera Nambiar (Intermediate Painting)" data-desc="Fine art oil paints on stretched 30x30 inch duck canvas. Explores fluid wave dynamics, translucent froth glazing, and deep oceanic indigo depths.">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <defs>
+              <linearGradient id="wave5" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#002171"/>
+                <stop offset="50%" stop-color="#0D47A1"/>
+                <stop offset="100%" stop-color="#00B0FF"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#wave5)"/>
+            <path d="M 0 200 C 120 120 180 300 400 180 L 400 400 L 0 400 Z" fill="#01579B" opacity="0.8"/>
+            <path d="M 0 260 C 140 180 260 340 400 240 L 400 400 L 0 400 Z" fill="#0288D1" opacity="0.7"/>
+            <path d="M 0 310 C 150 240 280 360 400 290 L 400 400 L 0 400 Z" fill="#E1F5FE" opacity="0.6"/>
+            <circle cx="320" cy="80" r="35" fill="#FFE082"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Oceanic Harmony • Oil on Canvas</span>
+          </div>
+        </div>
+
+        <!-- 6. Mixed Media -->
+        <div class="gallery-item slide-in" data-category="mixed" data-title="Koramangala Street Rhythm" data-artist="Rahul V. (Weekend Masterclass)" data-desc="Collage with vintage Kannada print clippings, acrylic washes, Indian ink, and 24k gold leaf on birch wood panel.">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <rect width="400" height="400" fill="#F7F3E9"/>
+            <rect x="50" y="50" width="180" height="230" fill="#2B1A4A" opacity="0.85"/>
+            <rect x="170" y="140" width="170" height="190" fill="#FF7A00" opacity="0.75"/>
+            <circle cx="260" cy="110" r="50" fill="#D4AF37"/>
+            <line x1="60" y1="340" x2="340" y2="60" stroke="#2B1A4A" stroke-width="5"/>
+            <circle cx="120" cy="200" r="25" fill="#FFF" opacity="0.8"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Street Rhythm • Mixed Media</span>
+          </div>
+        </div>
+
+        <!-- 7. Drawing -->
+        <div class="gallery-item slide-in" data-category="drawing" data-title="Botanical Ink Pen &amp; Wash" data-artist="Kavita Rao (Urban Sketching)" data-desc="Sakura Pigma Micron pens (0.05–0.8mm) &amp; grey ink wash on smooth Bristol board. Highlights delicate leaf venation and natural organic curvature.">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <rect width="400" height="400" fill="#FCFAF2"/>
+            <path d="M 200 380 Q 190 200 230 60" stroke="#1A0F2E" stroke-width="6" fill="none"/>
+            <path d="M 200 310 C 120 270 110 170 180 170 C 195 240 205 280 200 310" fill="#2B1A4A" opacity="0.75"/>
+            <path d="M 210 240 C 290 200 310 130 230 120 C 210 180 205 210 210 240" fill="#FF7A00" opacity="0.7"/>
+            <circle cx="230" cy="60" r="16" fill="#1A0F2E"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Botanical Ink • Pen &amp; Wash</span>
+          </div>
+        </div>
+
+        <!-- 8. Watercolor -->
+        <div class="gallery-item slide-in" data-category="watercolor" data-title="Western Ghats Mist" data-artist="Sahil Mehta (Weekend Workshop)" data-desc="Granulating cobalt violet and viridian green watercolor wash. Captures early morning fog cascading over the Nilgiri hills.">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <defs>
+              <linearGradient id="mist8" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#EDE7F6"/>
+                <stop offset="100%" stop-color="#E0F2F1"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#mist8)"/>
+            <polygon points="0,400 130,220 270,360 400,190 400,400" fill="#7E57C2" opacity="0.4"/>
+            <polygon points="0,400 190,270 330,370 400,280 400,400" fill="#5C6BC0" opacity="0.6"/>
+            <polygon points="40,400 220,310 390,400" fill="#2B1A4A" opacity="0.85"/>
+            <circle cx="90" cy="110" r="35" fill="#FFB74D" opacity="0.6"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Western Ghats • Watercolor</span>
+          </div>
+        </div>
+
+        <!-- 9. Digital -->
+        <div class="gallery-item slide-in" data-category="digital" data-title="Galactic Nomad Character Study" data-artist="Divya Ramesh (Portfolio Prep)" data-desc="Sci-fi character concept design made for a video game portfolio submission to Srishti Institute of Art &amp; Design.">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <defs>
+              <radialGradient id="space9" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#7B1FA2"/>
+                <stop offset="100%" stop-color="#0A0017"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#space9)"/>
+            <circle cx="200" cy="200" r="95" fill="none" stroke="#FF7A00" stroke-width="4"/>
+            <circle cx="200" cy="200" r="130" fill="none" stroke="#E040FB" stroke-width="2" stroke-dasharray="8,12"/>
+            <circle cx="200" cy="200" r="32" fill="#FFF"/>
+            <line x1="80" y1="200" x2="320" y2="200" stroke="#00E5FF" stroke-width="2"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Galactic Nomad • Concept Art</span>
+          </div>
+        </div>
+
+        <!-- 10. Painting -->
+        <div class="gallery-item slide-in" data-category="painting" data-title="Autumn Bloom in Koramangala" data-artist="Sanjay K. (Painting Course, 6 months)" data-desc="Textured impasto acrylic on 20x20 inch gallery canvas. Rendered with palette knife strokes depicting the radiant Gulmohar blossoms.">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <defs>
+              <linearGradient id="fall10" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#BF360C"/>
+                <stop offset="60%" stop-color="#FF7A00"/>
+                <stop offset="100%" stop-color="#FFE082"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#fall10)"/>
+            <circle cx="200" cy="200" r="90" fill="#2B1A4A" opacity="0.9"/>
+            <circle cx="200" cy="200" r="50" fill="#FF7A00"/>
+            <circle cx="200" cy="200" r="20" fill="#FFF"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Autumn Bloom • Impasto Acrylic</span>
+          </div>
+        </div>
+
+        <!-- 11. Mixed Media -->
+        <div class="gallery-item slide-in" data-category="mixed" data-title="Metamorphosis in Clay &amp; Ink" data-artist="Deepa Natarajan (Advanced Student)" data-desc="Relief terracotta clay sculpting with raw pigment stains and sumi ink on hand-carved teak board.">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <rect width="400" height="400" fill="#2B1A4A"/>
+            <circle cx="150" cy="200" r="90" fill="#FF7A00" opacity="0.85"/>
+            <circle cx="250" cy="200" r="90" fill="#4A148C" opacity="0.85"/>
+            <ellipse cx="200" cy="200" rx="35" ry="75" fill="#FFF" opacity="0.75"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Metamorphosis • Clay &amp; Ink</span>
+          </div>
+        </div>
+
+        <!-- 12. Watercolor -->
+        <div class="gallery-item slide-in" data-category="watercolor" data-title="Seaside Solitude at Gokarna" data-artist="Kiran Rao (Watercolor Workshop)" data-desc="Winsor &amp; Newton professional artist watercolor on Saunders Waterford 300gsm rough paper. Features wet-into-wet shoreline surf.">
+          <svg viewBox="0 0 400 400" width="100%" height="100%">
+            <defs>
+              <linearGradient id="sea12" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#E0F7FA"/>
+                <stop offset="50%" stop-color="#4DD0E1"/>
+                <stop offset="100%" stop-color="#006064"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#sea12)"/>
+            <circle cx="290" cy="90" r="30" fill="#FFB74D"/>
+            <path d="M 50 270 Q 200 230 350 270" stroke="#FFF" stroke-width="5" fill="none"/>
+            <polygon points="175,250 195,210 205,250" fill="#2B1A4A"/>
+          </svg>
+          <div class="gallery-item__overlay">
+            <span>Seaside Solitude • Watercolor</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image Lightbox">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous artwork">&#10094;</button>
+    <div class="lightbox__content" id="lightboxContent">
+      <!-- Injected by JS -->
+    </div>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next artwork">&#10095;</button>
+  </div>
+
+  <!-- CTA Banner -->
+  <section class="section-padding" style="background: linear-gradient(135deg, var(--primary) 0%, #3f256c 100%); color: #fff; text-align: center;">
+    <div class="container slide-in">
+      <h2 style="color: #fff; margin-bottom: 0.75rem; font-size: 2.2rem;">Ready to Exhibit Your Own Masterpiece?</h2>
+      <p style="color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem;">
+        Whether you want to exhibit in galleries or paint for peace of mind, our doors are open for you.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="booking.html" class="btn btn-primary" style="background: var(--secondary); border-color: var(--secondary); color: #fff; font-size: 1.05rem; padding: 0.9rem 2rem;">Book a Free Trial Class</a>
+        <a href="services.html" class="btn btn-secondary" style="border-color: #fff; color: #fff; font-size: 1.05rem; padding: 0.9rem 2rem;">Explore Studio Courses</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="index.html" class="footer__brand" aria-label="Art School Home"><img src="assets/logo.svg" alt="Art School Logo" class="footer__logo"></a>
+        <p class="footer__desc">
+          Inspiring artists of every age and skill level. Join our interactive studio classes and weekend workshops in Bangalore.
+        </p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services &amp; Courses</a></li>
+          <li><a href="gallery.html">Student Gallery</a></li>
+          <li><a href="pricing.html">Pricing Plans</a></li>
+          <li><a href="booking.html">Book a Class</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer__links">
+          <li><a href="reviews.html">Student Reviews</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="booking.html?service=Weekend+Workshops">Weekend Workshops</a></li>
+          <li><a href="booking.html?service=Portfolio+Prep">Portfolio Mentorship</a></li>
+          <li><a href="booking.html?service=Kids+Art+Classes">Kids Studio</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Visit Our Studio</h4>
+        <p>📍 42 Brush Lane, Koramangala, Bangalore 560034</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@createartschool.in</p>
+        <p style="margin-top: 0.8rem; font-weight: 600; color: #fff;">Opening Hours:</p>
+        <p>Mon - Fri: 9:00 AM – 8:00 PM</p>
+        <p>Sat: 10:00 AM – 6:00 PM</p>
+        <p>Sun: 10:00 AM – 2:00 PM</p>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <div class="container">
+        <p>© 2024 Art School. All rights reserved. Built with passion for artists.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import './js/main.js';
+
+    // 1. Category Filtering
+    const filterButtons = document.querySelectorAll('.gallery-filters .filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const cat = btn.dataset.category;
+        galleryItems.forEach(item => {
+          if (cat === 'all' || item.dataset.category === cat) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 2. Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightboxContent');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+
+    let visibleItems = [];
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      visibleItems = Array.from(galleryItems).filter(item => !item.classList.contains('hidden'));
+      currentIndex = index;
+      renderLightboxItem();
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function renderLightboxItem() {
+      const item = visibleItems[currentIndex];
+      if (!item) return;
+      const svg = item.querySelector('svg').cloneNode(true);
+      const title = item.dataset.title || 'Student Artwork';
+      const artist = item.dataset.artist || 'Student Artist';
+      const desc = item.dataset.desc || '';
+
+      lightboxContent.innerHTML = '';
+      lightboxContent.appendChild(svg);
+
+      const caption = document.createElement('div');
+      caption.style.textAlign = 'center';
+      caption.style.color = '#fff';
+      caption.style.marginTop = '1rem';
+      caption.style.maxWidth = '600px';
+      caption.style.margin = '1rem auto 0';
+      caption.innerHTML = `
+        <h3 style="color:#FF7A00; font-family: Caveat, cursive; font-size: 2.1rem; margin-bottom: 0.25rem;">${title}</h3>
+        <p style="color: #FFD54F; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem;">By ${artist}</p>
+        <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">${desc}</p>
+        <a href="booking.html" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.45rem 1.25rem;">Book Similar Class</a>
+      `;
+      lightboxContent.appendChild(caption);
+    }
+
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        visibleItems = Array.from(galleryItems).filter(el => !el.classList.contains('hidden'));
+        const idx = visibleItems.indexOf(item);
+        if (idx !== -1) openLightbox(idx);
+      });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+      renderLightboxItem();
+    });
+    lightboxNext.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % visibleItems.length;
+      renderLightboxItem();
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') lightboxPrev.click();
+      if (e.key === 'ArrowRight') lightboxNext.click();
+    });
+  </script>
+</body>
+</html>

@@ -127,7 +127,7 @@ app.use((err, _req, res, _next) => {
 });
 
 // ─── Start Server ───────────────────────────────────────────────────────────
-if (require.main === module || !process.env.VERCEL) {
+if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`🚀  Server running on http://localhost:${PORT}`);
     console.log(`📡  Environment: ${process.env.NODE_ENV || 'development'}`);

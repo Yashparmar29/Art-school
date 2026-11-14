@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Art School</title>
+  <meta name="description" content="Get in touch with Art School in Koramangala, Bangalore. Find directions, phone numbers, opening hours, or send our counselors a direct message.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__brand" aria-label="Art School Home"><img src="assets/logo.svg" alt="Art School Logo" class="navbar__logo"></a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--secondary); font-weight: 700; margin-bottom: 0.5rem;" class="slide-in" data-delay="0">
+        Get In Touch • Studio Visits &amp; Counselors
+      </p>
+      <h1 class="slide-in" data-delay="100">Connect With Our Studio</h1>
+      <p class="slide-in" data-delay="150" style="max-width: 650px; margin: 0 auto 1rem;">
+        Have questions about fine-arts courses, admissions, trial sessions, or workshop schedules? We'd love to assist your creative journey.
+      </p>
+      <div class="slide-in" data-delay="200">
+        <span class="contact-status-badge" id="studioStatusBadge">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="statusText">Checking Studio Hours...</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Action Cards -->
+  <section style="padding: 2.5rem 0 0; background: var(--bg);">
+    <div class="container">
+      <div class="contact-quick-actions slide-in" data-delay="100">
+        <a href="https://wa.me/919876543210?text=Hello%20Create%20Art%20School%2C%20I%20would%20like%20to%20inquire%20about%20your%20classes." target="_blank" rel="noopener noreferrer" class="quick-action-card">
+          <div class="quick-action-icon quick-action-icon--wa">💬</div>
+          <div class="quick-action-title">Chat on WhatsApp</div>
+          <div class="quick-action-desc">+91 98765 43210 (Instant Reply)</div>
+        </a>
+        <a href="tel:+919876543210" class="quick-action-card">
+          <div class="quick-action-icon quick-action-icon--tel">📞</div>
+          <div class="quick-action-title">Call Studio Hotline</div>
+          <div class="quick-action-desc">+91 98765 43210 / 080 4123 4567</div>
+        </a>
+        <a href="mailto:hello@createartschool.in" class="quick-action-card">
+          <div class="quick-action-icon quick-action-icon--email">✉️</div>
+          <div class="quick-action-title">Email Admissions</div>
+          <div class="quick-action-desc">hello@createartschool.in</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Contact Section -->
+  <section class="section-padding" style="background: var(--bg);">
+    <div class="container">
+
+      <div class="contact-grid">
+
+        <!-- Form Column -->
+        <div class="card slide-in" data-delay="100" style="padding: 2.5rem;">
+          <h2 style="margin-bottom: 0.5rem; color: var(--primary);">Send Us a Message</h2>
+          <p style="margin-bottom: 1.5rem; color: var(--text-light); font-size: 0.95rem;">
+            Fill in your details below and one of our dedicated art instructors or admissions counselors will reply within 24 hours.
+          </p>
+
+          <!-- Success Message -->
+          <div id="contactSuccess" class="form-success" role="alert" style="margin-bottom: 1.5rem;">
+            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.35rem;">✉️ Message Received!</div>
+            <p style="margin-bottom: 0.75rem;">
+              Thank you, <strong id="successSenderName">there</strong>! We have received your inquiry regarding <strong id="successSenderSubject">our courses</strong>. A studio mentor will get back to you shortly.
+            </p>
+            <button type="button" id="btnSendAnother" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.45rem 1rem;">
+              Send Another Inquiry
+            </button>
+          </div>
+
+          <!-- Error Message -->
+          <div id="contactError" class="form-error" role="alert" style="margin-bottom: 1.5rem;"></div>
+
+          <form id="contactForm" novalidate>
+
+            <!-- Name -->
+            <div class="form-group" id="cnt-grp-name">
+              <label for="cnt-name">Your Full Name <span style="color:#d32f2f;">*</span></label>
+              <input type="text" id="cnt-name" name="name" placeholder="e.g. Rahul Verma" autocomplete="name" required>
+              <div class="error-message">Please enter your full name (at least 2 characters).</div>
+            </div>
+
+            <!-- Email & Phone Grid -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group" id="cnt-grp-email">
+                <label for="cnt-email">Email Address <span style="color:#d32f2f;">*</span></label>
+                <input type="email" id="cnt-email" name="email" placeholder="e.g. rahul@example.com" autocomplete="email" required>
+                <div class="error-message">Please enter a valid email address.</div>
+              </div>
+
+              <div class="form-group" id="cnt-grp-phone">
+                <label for="cnt-phone">Phone / WhatsApp Number</label>
+                <input type="tel" id="cnt-phone" name="phone" placeholder="e.g. +91 98765 43210" autocomplete="tel">
+                <div class="error-message">Please enter a valid 10-digit phone number.</div>
+              </div>
+            </div>
+
+            <!-- Subject / Inquiry Topic -->
+            <div class="form-group" id="cnt-grp-subject">
+              <label for="cnt-subject">Inquiry Subject <span style="color:#d32f2f;">*</span></label>
+              <select id="cnt-subject" name="subject" required>
+                <option value="">-- Select Topic --</option>
+                <option value="Course Admissions & Enrollment">Course Admissions &amp; Enrollment</option>
+                <option value="Free Studio Trial Class">Book a Free Studio Trial Class</option>
+                <option value="Weekend Art Workshops">Weekend Art Workshops</option>
+                <option value="Kids Art Classes">Kids Art Classes (Ages 5–12)</option>
+                <option value="Private 1-on-1 Mentorship">Private 1-on-1 Tutoring &amp; Mentorship</option>
+                <option value="Portfolio Preparation">Art College Portfolio Preparation</option>
+                <option value="Corporate Art Sessions">Corporate Team-Building &amp; Art Events</option>
+                <option value="General Studio Inquiry">General Studio Inquiry</option>
+              </select>
+              <div class="error-message">Please select the subject of your inquiry.</div>
+            </div>
+
+            <!-- Preferred Contact Method -->
+            <div class="form-group">
+              <label>Preferred Response Method</label>
+              <div class="preferred-contact-group" id="prefContactGroup">
+                <label class="preferred-pill active">
+                  <input type="radio" name="preferredContact" value="Email" checked>
+                  <span>✉️ Email</span>
+                </label>
+                <label class="preferred-pill">
+                  <input type="radio" name="preferredContact" value="WhatsApp">
+                  <span>💬 WhatsApp</span>
+                </label>
+                <label class="preferred-pill">
+                  <input type="radio" name="preferredContact" value="Phone">
+                  <span>📞 Phone Call</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Message Textarea -->
+            <div class="form-group" id="cnt-grp-message">
+              <label for="cnt-message">Your Message / Specific Requirements <span style="color:#d32f2f;">*</span></label>
+              <textarea id="cnt-message" name="message" placeholder="Tell us about your art background, current goals, or preferred batch timings..." maxlength="800" required></textarea>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.25rem;">
+                <div class="error-message" style="margin: 0;">Please enter your message (at least 10 characters).</div>
+                <div class="char-counter" id="cntCharCounter">0 / 800 characters</div>
+              </div>
+            </div>
+
+            <!-- Free Brochure Checkbox -->
+            <div style="margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 0.6rem;">
+              <input type="checkbox" id="cnt-brochure" name="brochure" checked style="width: auto; margin-top: 0.2rem; cursor: pointer;">
+              <label for="cnt-brochure" style="font-size: 0.88rem; color: var(--text-light); cursor: pointer; line-height: 1.4;">
+                Email me Art School's seasonal curriculum brochure, workshop calendar, and trial class schedule.
+              </label>
+            </div>
+
+            <button type="submit" id="cntSubmitBtn" class="btn btn-primary" style="width: 100%; font-size: 1.05rem; padding: 0.95rem;">
+              Send Message
+            </button>
+
+          </form>
+        </div>
+
+        <!-- Info & Map Column -->
+        <div class="slide-in" data-delay="200">
+          <div class="card" style="margin-bottom: 2rem; padding: 2.25rem;">
+            <h2 style="margin-bottom: 1.25rem; color: var(--primary);">Studio Details</h2>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon">📍</div>
+              <div>
+                <h4>Address &amp; Directions</h4>
+                <p>42 Brush Lane, 4th Block, Koramangala<br>Bangalore, Karnataka 560034</p>
+                <a href="https://maps.google.com/?q=Koramangala+Bangalore" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.35rem; color: var(--secondary); font-size: 0.88rem; font-weight: 600; margin-top: 0.35rem;">
+                  <span>Open in Google Maps ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon">📞</div>
+              <div>
+                <h4>Direct Phone &amp; WhatsApp</h4>
+                <p>+91 98765 43210 (Desk &amp; WhatsApp)<br>+91 80 4123 4567 (Landline)</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon">✉️</div>
+              <div>
+                <h4>Email Inquiries</h4>
+                <p>hello@createartschool.in (Admissions)<br>support@createartschool.in (Student Care)</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon">🕒</div>
+              <div>
+                <h4>Studio Opening Hours</h4>
+                <div style="font-size: 0.9rem; margin-top: 0.2rem; line-height: 1.5;">
+                  <p><strong>Monday – Friday:</strong> 9:00 AM – 8:00 PM</p>
+                  <p><strong>Saturday:</strong> 10:00 AM – 6:00 PM</p>
+                  <p><strong>Sunday:</strong> 10:00 AM – 2:00 PM</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Commute & Parking Guide -->
+            <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid #eee;">
+              <h4 style="margin-bottom: 0.6rem; color: var(--primary);">How to Reach Our Studio</h4>
+              <div class="commute-grid">
+                <div class="commute-item">
+                  <span>🚇</span>
+                  <div><strong>Metro</strong><br>Sony World / Koramangala (10 mins)</div>
+                </div>
+                <div class="commute-item">
+                  <span>🚌</span>
+                  <div><strong>Bus Stop</strong><br>4th Block Koramangala (2 min walk)</div>
+                </div>
+                <div class="commute-item">
+                  <span>🚗</span>
+                  <div><strong>Free Parking</strong><br>Dedicated slots for 2W &amp; 4W</div>
+                </div>
+                <div class="commute-item">
+                  <span>♿</span>
+                  <div><strong>Accessibility</strong><br>Ground floor step-free access</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid #eee;">
+              <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Follow Our Creative Community</h4>
+              <div class="social-links">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">📸</a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">📘</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶️</a>
+                <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">📌</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Embedded Map -->
+          <div class="map-container">
+            <iframe
+              title="Art School Koramangala Location Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15555.276274474716!2d77.6186414163909!3d12.934789500000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14494c25f56b%3A0xb36b5ec6a21855e9!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section class="section-padding" style="background: #fff;">
+    <div class="container" style="max-width: 860px;">
+      <div class="section-header slide-in" style="text-align: center; margin-bottom: 2.5rem;">
+        <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--secondary); font-weight: 700; margin-bottom: 0.5rem;">Got Questions?</p>
+        <h2>Frequently Asked Questions</h2>
+        <p style="color: var(--text-light);">Everything you need to know about contacting us, booking studio visits, and taking trial classes.</p>
+      </div>
+
+      <div class="accordion slide-in" data-delay="100">
+        <div class="accordion-item">
+          <button class="accordion-btn">Do I need an appointment before visiting the studio?</button>
+          <div class="accordion-content">
+            <div class="accordion-content__inner">
+              Walk-ins are always warmly welcomed during our regular opening hours! However, if you'd like a personalized tour with our senior instructors or want to discuss portfolio prep, we recommend scheduling an appointment or sending us a quick WhatsApp note so we can reserve dedicated time for you.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn">Can I take a free trial class before enrolling?</button>
+          <div class="accordion-content">
+            <div class="accordion-content__inner">
+              Yes! We offer a complimentary 60-minute trial session for beginners and intermediate artists. You can try our fine art materials, meet the mentors, and get a feel of our relaxed studio environment. You can book directly on our <a href="booking.html" style="color: var(--secondary); font-weight: 600;">Booking Page</a> or mention it in the form above.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn">How quickly does the team respond to online messages?</button>
+          <div class="accordion-content">
+            <div class="accordion-content__inner">
+              We respond to form submissions and emails within 24 hours. For urgent questions regarding same-day workshops or immediate batch availability, please message us on WhatsApp (+91 98765 43210) for real-time support.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn">Are art materials provided in the studio?</button>
+          <div class="accordion-content">
+            <div class="accordion-content__inner">
+              All studio supplies—including acrylic paints, oil paints, artist-grade watercolors, premium brushes, easels, and heavyweight canvases/papers—are fully provided for all workshops, weekend sessions, and trial classes.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn">Do you offer corporate team events and private group workshops?</button>
+          <div class="accordion-content">
+            <div class="accordion-content__inner">
+              Yes! We organize creative corporate team-building events, customized watercolor parties, and private group sessions both at our Koramangala studio or on-site at your office premises. Select "Corporate Art Sessions" in the form above to receive our corporate package catalog.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section-padding" style="background: linear-gradient(135deg, var(--primary) 0%, #3f256c 100%); color: #fff; text-align: center;">
+    <div class="container">
+      <h2 style="color: #fff; margin-bottom: 1rem; font-size: 2.2rem;">Ready to Begin Your Creative Journey?</h2>
+      <p style="color: rgba(255,255,255,0.85); max-width: 620px; margin: 0 auto 2rem; font-size: 1.1rem;">
+        Experience the joy of hands-on painting, drawing, and digital art with guided instruction tailored to your pace.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="booking.html" class="btn btn-primary" style="background: var(--secondary); border-color: var(--secondary); color: #fff;">Book a Free Trial Class</a>
+        <a href="services.html" class="btn btn-secondary" style="border-color: #fff; color: #fff;">Explore All Courses</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="index.html" class="footer__brand" aria-label="Art School Home"><img src="assets/logo.svg" alt="Art School Logo" class="footer__logo"></a>
+        <p class="footer__desc">
+          Inspiring artists of every age and skill level. Join our interactive studio classes and weekend workshops in Bangalore.
+        </p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services &amp; Courses</a></li>
+          <li><a href="gallery.html">Student Gallery</a></li>
+          <li><a href="pricing.html">Pricing Plans</a></li>
+          <li><a href="booking.html">Book a Class</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer__links">
+          <li><a href="reviews.html">Student Reviews</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="booking.html?service=Weekend+Workshops">Weekend Workshops</a></li>
+          <li><a href="booking.html?service=Portfolio+Prep">Portfolio Mentorship</a></li>
+          <li><a href="booking.html?service=Kids+Art+Classes">Kids Studio</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Visit Our Studio</h4>
+        <p>📍 42 Brush Lane, Koramangala, Bangalore 560034</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@createartschool.in</p>
+        <p style="margin-top: 0.8rem; font-weight: 600; color: #fff;">Opening Hours:</p>
+        <p>Mon - Fri: 9:00 AM – 8:00 PM</p>
+        <p>Sat: 10:00 AM – 6:00 PM</p>
+        <p>Sun: 10:00 AM – 2:00 PM</p>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <div class="container">
+        <p>© 2024 Art School. All rights reserved. Built with passion for artists.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { sendContact } from './js/api.js';
+    import './js/main.js';
+
+    // 1. Live Studio Status Indicator
+    function updateStudioStatus() {
+      const dot = document.getElementById('statusDot');
+      const text = document.getElementById('statusText');
+      if (!dot || !text) return;
+
+      const now = new Date();
+      const day = now.getDay(); // 0 is Sunday, 6 is Saturday
+      const hour = now.getHours();
+      const minute = now.getMinutes();
+      const timeInMinutes = hour * 60 + minute;
+
+      let isOpen = false;
+      let timingStr = '';
+
+      if (day >= 1 && day <= 5) { // Mon-Fri 9:00 - 20:00
+        timingStr = 'Open Today: 9:00 AM – 8:00 PM';
+        isOpen = (timeInMinutes >= 9 * 60 && timeInMinutes < 20 * 60);
+      } else if (day === 6) { // Sat 10:00 - 18:00
+        timingStr = 'Open Today: 10:00 AM – 6:00 PM';
+        isOpen = (timeInMinutes >= 10 * 60 && timeInMinutes < 18 * 60);
+      } else { // Sun 10:00 - 14:00
+        timingStr = 'Open Today: 10:00 AM – 2:00 PM';
+        isOpen = (timeInMinutes >= 10 * 60 && timeInMinutes < 14 * 60);
+      }
+
+      if (isOpen) {
+        dot.className = 'status-dot';
+        text.textContent = `🟢 Studio is Open Now • ${timingStr}`;
+      } else {
+        dot.className = 'status-dot status-dot--closed';
+        text.textContent = `🔴 Studio is Currently Closed • ${timingStr}`;
+      }
+    }
+    updateStudioStatus();
+
+    // 2. Character counter for message textarea
+    const msgInp = document.getElementById('cnt-message');
+    const charCounter = document.getElementById('cntCharCounter');
+    if (msgInp && charCounter) {
+      msgInp.addEventListener('input', () => {
+        const len = msgInp.value.length;
+        charCounter.textContent = `${len} / 800 characters`;
+        if (len >= 10) {
+          charCounter.style.color = 'var(--text-light)';
+        }
+      });
+    }
+
+    // 3. Preferred contact pills radio toggle
+    const prefPills = document.querySelectorAll('#prefContactGroup .preferred-pill');
+    prefPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        prefPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const radio = pill.querySelector('input[type="radio"]');
+        if (radio) radio.checked = true;
+      });
+    });
+
+    // 4. Accordion Toggle
+    const accButtons = document.querySelectorAll('.accordion-btn');
+    accButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const content = item.querySelector('.accordion-content');
+        const isActive = btn.classList.contains('active');
+
+        // Close other items
+        accButtons.forEach(otherBtn => {
+          if (otherBtn !== btn) {
+            otherBtn.classList.remove('active');
+            const otherContent = otherBtn.parentElement.querySelector('.accordion-content');
+            if (otherContent) otherContent.style.maxHeight = null;
+          }
+        });
+
+        // Toggle current
+        if (isActive) {
+          btn.classList.remove('active');
+          content.style.maxHeight = null;
+        } else {
+          btn.classList.add('active');
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // 5. Form Handling & Real-time Validation
+    const form = document.getElementById('contactForm');
+    const nameInp = document.getElementById('cnt-name');
+    const emailInp = document.getElementById('cnt-email');
+    const phoneInp = document.getElementById('cnt-phone');
+    const subjectInp = document.getElementById('cnt-subject');
+    const submitBtn = document.getElementById('cntSubmitBtn');
+    const successBox = document.getElementById('contactSuccess');
+    const errorBox = document.getElementById('contactError');
+    const successSenderName = document.getElementById('successSenderName');
+    const successSenderSubject = document.getElementById('successSenderSubject');
+    const btnSendAnother = document.getElementById('btnSendAnother');
+
+    function isValidEmail(email) {
+      return /^\S+@\S+\.\S+$/.test(email);
+    }
+
+    function isValidPhone(phone) {
+      if (!phone || phone.trim() === '') return true; // optional
+      const clean = phone.replace(/[\s\-\(\)\+]/g, '');
+      return clean.length >= 7 && clean.length <= 15 && /^\d+$/.test(clean);
+    }
+
+    // Live validation cleanup on typing
+    [nameInp, emailInp, phoneInp, subjectInp, msgInp].forEach(el => {
+      if (!el) return;
+      el.addEventListener('input', () => {
+        const grp = el.closest('.form-group');
+        if (grp) grp.classList.remove('has-error');
+      });
+      el.addEventListener('change', () => {
+        const grp = el.closest('.form-group');
+        if (grp) grp.classList.remove('has-error');
+      });
+    });
+
+    if (btnSendAnother) {
+      btnSendAnother.addEventListener('click', () => {
+        successBox.classList.remove('visible');
+        form.style.display = 'block';
+        form.reset();
+        if (charCounter) charCounter.textContent = '0 / 800 characters';
+      });
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      successBox.classList.remove('visible');
+      errorBox.classList.remove('visible');
+
+      const nameVal = nameInp.value.trim();
+      const emailVal = emailInp.value.trim();
+      const phoneVal = phoneInp.value.trim();
+      const subjectVal = subjectInp.value;
+      const msgVal = msgInp.value.trim();
+      const preferredRadio = document.querySelector('input[name="preferredContact"]:checked');
+      const prefVal = preferredRadio ? preferredRadio.value : 'Email';
+
+      let hasError = false;
+
+      const isNameValid = nameVal.length >= 2;
+      document.getElementById('cnt-grp-name').classList.toggle('has-error', !isNameValid);
+      if (!isNameValid) hasError = true;
+
+      const isEmailValid = isValidEmail(emailVal);
+      document.getElementById('cnt-grp-email').classList.toggle('has-error', !isEmailValid);
+      if (!isEmailValid) hasError = true;
+
+      const isPhoneValid = isValidPhone(phoneVal);
+      document.getElementById('cnt-grp-phone').classList.toggle('has-error', !isPhoneValid);
+      if (!isPhoneValid) hasError = true;
+
+      const isSubjectValid = subjectVal !== '';
+      document.getElementById('cnt-grp-subject').classList.toggle('has-error', !isSubjectValid);
+      if (!isSubjectValid) hasError = true;
+
+      const isMsgValid = msgVal.length >= 10;
+      document.getElementById('cnt-grp-message').classList.toggle('has-error', !isMsgValid);
+      if (!isMsgValid) hasError = true;
+
+      if (hasError) {
+        const firstErr = form.querySelector('.form-group.has-error input, .form-group.has-error select, .form-group.has-error textarea');
+        if (firstErr) firstErr.focus();
+        return;
+      }
+
+      submitBtn.classList.add('btn--loading');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending Message...';
+
+      try {
+        const payload = {
+          name: nameVal,
+          email: emailVal,
+          phone: phoneVal,
+          subject: subjectVal,
+          preferredContact: prefVal,
+          message: msgVal
+        };
+
+        const res = await sendContact(payload);
+        if (res.success) {
+          if (successSenderName) successSenderName.textContent = nameVal;
+          if (successSenderSubject) successSenderSubject.textContent = subjectVal;
+          form.style.display = 'none';
+          successBox.classList.add('visible');
+          successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error(res.message || 'Submission failed');
+        }
+      } catch (err) {
+        errorBox.textContent = `❌ ${err.message || 'Unable to send message right now. Please call us directly at +91 98765 43210.'}`;
+        errorBox.classList.add('visible');
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } finally {
+        submitBtn.classList.remove('btn--loading');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  </script>
+</body>
+</html>

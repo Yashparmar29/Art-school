@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses &amp; Services — Art School</title>
+  <meta name="description" content="Explore our fine art courses in painting, drawing, watercolor, digital illustration, and children's classes in Koramangala, Bangalore.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__brand" aria-label="Art School Home"><img src="assets/logo.svg" alt="Art School Logo" class="navbar__logo"></a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--secondary); font-weight: 700; margin-bottom: 0.5rem;" class="slide-in" data-delay="0">
+        Curated Curriculums &amp; Studio Programs
+      </p>
+      <h1 class="slide-in" data-delay="100">Our Courses &amp; Programs</h1>
+      <p class="slide-in" data-delay="150" style="max-width: 680px; margin: 0 auto;">
+        From foundational sketching to professional portfolio mentoring, discover thoughtfully designed studio courses taught by exhibiting fine artists.
+      </p>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section class="section-padding" style="background: var(--bg);">
+    <div class="container">
+
+      <!-- Course Category Filters -->
+      <div class="course-filters slide-in" data-delay="100" id="courseFilters">
+        <button class="course-filter-btn active" data-filter="all">All Programs</button>
+        <button class="course-filter-btn" data-filter="fine-art">Fine Art &amp; Painting</button>
+        <button class="course-filter-btn" data-filter="drawing">Drawing &amp; Sketching</button>
+        <button class="course-filter-btn" data-filter="watercolor">Watercolor</button>
+        <button class="course-filter-btn" data-filter="digital">Digital Illustration</button>
+        <button class="course-filter-btn" data-filter="kids">Kids &amp; Teens</button>
+        <button class="course-filter-btn" data-filter="workshops">Weekend Workshops</button>
+      </div>
+
+      <div id="services-status" style="text-align: center; margin-bottom: 2rem; color: var(--text-light); font-size: 0.95rem;">
+        Loading live course catalog...
+      </div>
+
+      <!-- Enhanced Course Cards Grid -->
+      <div class="grid grid-3" id="services-grid">
+        <!-- Rendered dynamically from API with enriched details -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- What's Included Banner -->
+  <section class="section-padding" style="background: #fff; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
+    <div class="container">
+      <div class="section-header slide-in">
+        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--secondary); font-weight: 700; margin-bottom: 0.35rem;">The Studio Advantage</p>
+        <h2>Included With Every Course</h2>
+        <p>Everything you need for an immersive, hassle-free studio experience in Koramangala.</p>
+      </div>
+
+      <div class="grid grid-4 slide-in" data-delay="150">
+        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+          <span style="font-size: 2.2rem; display: block; margin-bottom: 0.75rem;">🖌️</span>
+          <h3 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem;">All Materials Provided</h3>
+          <p style="font-size: 0.88rem; color: var(--text-light); margin: 0;">Artist-grade acrylics, oils, French watercolors, sketchpads, and canvases.</p>
+        </div>
+
+        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+          <span style="font-size: 2.2rem; display: block; margin-bottom: 0.75rem;">👥</span>
+          <h3 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem;">Max 6–8 Students</h3>
+          <p style="font-size: 0.88rem; color: var(--text-light); margin: 0;">Strict batch caps ensure personalized attention and 1-on-1 critique every session.</p>
+        </div>
+
+        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+          <span style="font-size: 2.2rem; display: block; margin-bottom: 0.75rem;">🔒</span>
+          <h3 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem;">Personal Studio Locker</h3>
+          <p style="font-size: 0.88rem; color: var(--text-light); margin: 0;">Safe on-site storage for your works-in-progress, dry drying racks, and palettes.</p>
+        </div>
+
+        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+          <span style="font-size: 2.2rem; display: block; margin-bottom: 0.75rem;">🏛️</span>
+          <h3 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem;">Annual Gallery Showcase</h3>
+          <p style="font-size: 0.88rem; color: var(--text-light); margin: 0;">Exhibit your completed masterworks at our curated annual Bangalore student exhibition.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Which Course is Right for You Pathway Guide -->
+  <section class="section-padding" style="background: var(--bg);">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-header slide-in" style="text-align: center;">
+        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--secondary); font-weight: 700; margin-bottom: 0.35rem;">Course Advisor</p>
+        <h2>Which Course Is Right For You?</h2>
+        <p>Match your artistic ambitions with our tailored learning pathways.</p>
+      </div>
+
+      <div class="slide-in" data-delay="100" style="display: flex; flex-direction: column; gap: 1rem;">
+        <div class="card" style="display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary); text-transform: uppercase;">Complete Beginner</span>
+            <h3 style="color: var(--primary); margin: 0.2rem 0;">Never held a brush or pencil before?</h3>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">We recommend starting with <strong>Drawing</strong> or <strong>Painting Foundations</strong> to build observation and muscle memory.</p>
+          </div>
+          <a href="booking.html?service=Drawing" class="btn btn-secondary" style="font-size: 0.88rem;">Explore Drawing</a>
+        </div>
+
+        <div class="card" style="display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary); text-transform: uppercase;">Busy Working Professional</span>
+            <h3 style="color: var(--primary); margin: 0.2rem 0;">Looking for relaxing weekend therapy?</h3>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Try our <strong>Weekend Art Workshops</strong> or <strong>Watercolor Botanicals</strong> for stress-relieving sessions.</p>
+          </div>
+          <a href="booking.html?service=Weekend+Workshops" class="btn btn-secondary" style="font-size: 0.88rem;">Join Workshop</a>
+        </div>
+
+        <div class="card" style="display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary); text-transform: uppercase;">Aspiring Designer &amp; Architect</span>
+            <h3 style="color: var(--primary); margin: 0.2rem 0;">Preparing for NID, NIFT, or Fine Arts College?</h3>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Our <strong>Portfolio Prep &amp; Mentorship</strong> provides rigorous 1-on-1 critiques and project curation.</p>
+          </div>
+          <a href="booking.html?service=Portfolio+Prep" class="btn btn-secondary" style="font-size: 0.88rem;">Portfolio Mentorship</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section-padding" style="background: linear-gradient(135deg, var(--primary) 0%, #3f256c 100%); color: #fff; text-align: center;">
+    <div class="container slide-in">
+      <h2 style="color: #fff; margin-bottom: 0.75rem; font-size: 2.2rem;">Try a Class Before You Enroll</h2>
+      <p style="color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem;">
+        Take our 60-minute complimentary trial class in our Koramangala studio. Meet the instructors, try the supplies, and paint your first piece.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="booking.html?service=Free+Trial+Class" class="btn btn-primary" style="background: var(--secondary); border-color: var(--secondary); color: #fff;">Book Free Trial Class</a>
+        <a href="pricing.html" class="btn btn-secondary" style="border-color: #fff; color: #fff;">View Monthly Plans</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="index.html" class="footer__brand" aria-label="Art School Home"><img src="assets/logo.svg" alt="Art School Logo" class="footer__logo"></a>
+        <p class="footer__desc">
+          Inspiring artists of every age and skill level. Join our interactive studio classes and weekend workshops in Bangalore.
+        </p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services &amp; Courses</a></li>
+          <li><a href="gallery.html">Student Gallery</a></li>
+          <li><a href="pricing.html">Pricing Plans</a></li>
+          <li><a href="booking.html">Book a Class</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer__links">
+          <li><a href="reviews.html">Student Reviews</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="booking.html?service=Weekend+Workshops">Weekend Workshops</a></li>
+          <li><a href="booking.html?service=Portfolio+Prep">Portfolio Mentorship</a></li>
+          <li><a href="booking.html?service=Kids+Art+Classes">Kids Studio</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Visit Our Studio</h4>
+        <p>📍 42 Brush Lane, Koramangala, Bangalore 560034</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@createartschool.in</p>
+        <p style="margin-top: 0.8rem; font-weight: 600; color: #fff;">Opening Hours:</p>
+        <p>Mon - Fri: 9:00 AM – 8:00 PM</p>
+        <p>Sat: 10:00 AM – 6:00 PM</p>
+        <p>Sun: 10:00 AM – 2:00 PM</p>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <div class="container">
+        <p>© 2024 Art School. All rights reserved. Built with passion for artists.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { getServices } from './js/api.js';
+    import { observeSlideIn } from './js/main.js';
+
+    // Detailed metadata per course
+    const courseMeta = {
+      'Drawing': {
+        category: 'drawing',
+        badge: 'Fundamental',
+        highlights: ['Pencil, charcoal & vine ink', 'Perspective & vanishing points', 'Proportions, shading & still life', 'Hands-on easel practice']
+      },
+      'Painting': {
+        category: 'fine-art',
+        badge: 'Most Popular',
+        highlights: ['Acrylic & oil canvas techniques', 'Colour theory & palette mixing', 'Brushwork & impasto knife methods', 'Finished canvas to take home']
+      },
+      'Sketching': {
+        category: 'drawing',
+        badge: 'Beginner Friendly',
+        highlights: ['Rapid gesture drawing', 'Outdoor Koramangala urban sketching', 'Ink & wash journal illustrations', 'Building daily drawing habits']
+      },
+      'Watercolor': {
+        category: 'watercolor',
+        badge: 'Therapeutic',
+        highlights: ['Wet-on-wet & dry brush methods', 'Luminous landscape washes', 'Botanical floral illustrations', 'Arches 300gsm cold-press paper']
+      },
+      'Digital Art': {
+        category: 'digital',
+        badge: 'Contemporary',
+        highlights: ['Procreate & Photoshop workflows', 'Digital painting brushes & layers', 'Concept art & character design', 'Studio iPad tablets provided']
+      },
+      'Kids Art Classes': {
+        category: 'kids',
+        badge: 'Ages 5–12',
+        highlights: ['Fun finger painting & crafts', 'Clay modeling & 3D sculpting', 'Storytelling through color', 'Safe, non-toxic materials']
+      },
+      'Weekend Workshops': {
+        category: 'workshops',
+        badge: 'Single Session',
+        highlights: ['3-Hour intensive deep dive', 'Different medium every weekend', 'No prior experience required', 'Framable finished artwork']
+      },
+      'Portfolio Prep': {
+        category: 'fine-art',
+        badge: '1-on-1 Mentorship',
+        highlights: ['University entrance coaching', 'NID, NIFT & Srishti curation', 'Senior artist weekly critique', 'Presentation & statement writing']
+      }
+    };
+
+    const fallbackServices = [
+      {
+        title: 'Drawing',
+        description: 'Master fundamentals with graphite, charcoal, and ink. Learn perspective, shading, proportions, and still life through structured exercises.',
+        price: 2000,
+        duration: '1.5 hrs',
+        icon: '✏️'
+      },
+      {
+        title: 'Painting',
+        description: 'Explore acrylic and oil techniques, color theory, brush gestures, and canvas composition with expressive guided studio projects.',
+        price: 2500,
+        duration: '2 hrs',
+        icon: '🎨'
+      },
+      {
+        title: 'Sketching',
+        description: 'Expressive gesture drawing, urban sketching, and rapid visual storytelling on paper. Ideal for capturing live city moments.',
+        price: 1800,
+        duration: '1 hr',
+        icon: '📝'
+      },
+      {
+        title: 'Watercolor',
+        description: 'Learn wet-on-wet, glazes, and atmospheric washes for luminous botanical and landscape paintings on archival heavy paper.',
+        price: 2200,
+        duration: '1.5 hrs',
+        icon: '💧'
+      },
+      {
+        title: 'Digital Art',
+        description: 'Create digital illustrations with tablet workflows, layers, digital brushes, and concept design for creative industry portfolios.',
+        price: 3000,
+        duration: '2 hrs',
+        icon: '💻'
+      },
+      {
+        title: 'Kids Art Classes',
+        description: 'Nurturing creativity for ages 5–12 through clay modelling, crafts, watercolor, and creative storytelling in a fun, safe space.',
+        price: 1500,
+        duration: '1 hr',
+        icon: '👶'
+      },
+      {
+        title: 'Weekend Workshops',
+        description: 'Intensive single-session deep dives into specific mediums. Relax, learn new techniques, and take home your finished canvas.',
+        price: 1000,
+        duration: '3 hrs',
+        icon: '🖌️'
+      },
+      {
+        title: 'Portfolio Prep',
+        description: 'Tailored mentoring for students preparing fine arts & design entrance applications. Detailed critique and project curation.',
+        price: 5000,
+        duration: '2 hrs',
+        icon: '📁'
+      }
+    ];
+
+    let currentServices = [];
+    let currentFilter = 'all';
+
+    function renderServicesList() {
+      const grid = document.getElementById('services-grid');
+      const statusEl = document.getElementById('services-status');
+      grid.innerHTML = '';
+      if (statusEl) statusEl.style.display = 'none';
+
+      let filtered = currentServices;
+      if (currentFilter !== 'all') {
+        filtered = currentServices.filter(s => {
+          const meta = courseMeta[s.title] || {};
+          return meta.category === currentFilter;
+        });
+      }
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; background: #fff; border-radius: 16px;">
+            <p style="font-size: 1.1rem; color: var(--text-light);">No courses found in this category.</p>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach((s, idx) => {
+        const card = document.createElement('div');
+        card.className = 'course-card-enhanced slide-in';
+        card.dataset.delay = String((idx % 3) * 120);
+
+        const meta = courseMeta[s.title] || { badge: 'Course', highlights: ['Materials included', 'Small batch size', 'Personalized mentor attention'] };
+        const priceUnit = s.title.includes('Workshop') ? '/session' : '/month';
+
+        const highlightsHtml = meta.highlights.map(h => `<li>${h}</li>`).join('');
+
+        card.innerHTML = `
+          <span class="course-card-enhanced__badge">${meta.badge}</span>
+          <span class="course-card-enhanced__icon">${s.icon || '🎨'}</span>
+          <h3 class="course-card-enhanced__title">${s.title}</h3>
+          <p class="course-card-enhanced__desc">${s.description}</p>
+          <div style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 0.75rem;">
+            ⏱ <strong>${s.duration}</strong> per session • <strong>2x</strong> per week
+          </div>
+          <ul class="course-card-enhanced__highlights">
+            ${highlightsHtml}
+          </ul>
+          <div class="course-card-enhanced__footer">
+            <div class="course-card-enhanced__price">
+              ₹${Number(s.price).toLocaleString('en-IN')}<span>${priceUnit}</span>
+            </div>
+            <a href="booking.html?service=${encodeURIComponent(s.title)}" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">
+              Book Seat
+            </a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      observeSlideIn(grid);
+    }
+
+    // Filter Button Clicks
+    const filterBtns = document.querySelectorAll('#courseFilters .course-filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        renderServicesList();
+      });
+    });
+
+    async function init() {
+      try {
+        const data = await getServices();
+        const list = data.services || data;
+        if (Array.isArray(list) && list.length > 0) {
+          currentServices = list;
+        } else {
+          currentServices = fallbackServices;
+        }
+      } catch (err) {
+        console.warn('API unreachable, using fallback services', err);
+        currentServices = fallbackServices;
+      }
+      renderServicesList();
+    }
+
+    init();
+  </script>
+</body>
+</html>
