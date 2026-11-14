@@ -49,10 +49,10 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-// Rate limiting — max 100 requests per 15-minute window per IP
+// Rate limiting — applied only to /api routes; generous in development
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100,
+  max: process.env.NODE_ENV === 'production' ? 1000 : 10000,
   standardHeaders: true,
   legacyHeaders: false,
   message: {
@@ -60,7 +60,7 @@ const limiter = rateLimit({
     message: 'Too many requests from this IP, please try again after 15 minutes.',
   },
 });
-app.use(limiter);
+app.use('/api', limiter);
 
 // Body parsers
 app.use(express.json({ limit: '10kb' }));

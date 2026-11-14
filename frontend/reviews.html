@@ -817,6 +817,44 @@
     }
     loadAllReviews();
 
+    // ─── Live Form Preview ──────────────────────────────────────────────
+    const form = document.getElementById('reviewForm');
+    const nameInp = document.getElementById('rev-name');
+    const roleInp = document.getElementById('rev-role');
+    const courseInp = document.getElementById('rev-course');
+    const titleInp = document.getElementById('rev-title');
+    const commentInp = document.getElementById('rev-comment');
+    const charCounter = document.getElementById('revCharCounter');
+
+    const prevName = document.getElementById('prevName');
+    const prevRole = document.getElementById('prevRole');
+    const prevCourse = document.getElementById('prevCourse');
+    const prevStars = document.getElementById('prevStars');
+    const prevScore = document.getElementById('prevScore');
+    const prevTitle = document.getElementById('prevTitle');
+    const prevComment = document.getElementById('prevComment');
+    const prevAvatar = document.getElementById('prevAvatar');
+
+    function updateLivePreview() {
+      const name = (nameInp && nameInp.value.trim()) || 'Your Name';
+      const role = (roleInp && roleInp.value) || 'Adult Beginner';
+      const course = (courseInp && courseInp.value) || 'Painting';
+      const title = (titleInp && titleInp.value.trim()) || 'Headline will appear here';
+      const comment = (commentInp && commentInp.value.trim()) || 'Your detailed feedback and experience will be previewed here in real-time...';
+
+      if (prevName) prevName.textContent = name;
+      if (prevRole) prevRole.textContent = role;
+      if (prevCourse) prevCourse.textContent = course;
+      if (prevStars) prevStars.textContent = renderStarString(selectedRating);
+      if (prevScore) prevScore.textContent = `${selectedRating}.0`;
+      if (prevTitle) prevTitle.textContent = `"${title}"`;
+      if (prevComment) prevComment.textContent = `"${comment}"`;
+      if (prevAvatar) {
+        prevAvatar.textContent = getInitials(name);
+        prevAvatar.style.background = getAvatarGradient(name);
+      }
+    }
+
     // ─── Interactive Star Rating Selector ───────────────────────────────
     let selectedRating = 5;
     const starBtns = document.querySelectorAll('#starSelector button');
@@ -865,44 +903,6 @@
     });
 
     updateStars(5);
-
-    // ─── Live Form Preview ──────────────────────────────────────────────
-    const form = document.getElementById('reviewForm');
-    const nameInp = document.getElementById('rev-name');
-    const roleInp = document.getElementById('rev-role');
-    const courseInp = document.getElementById('rev-course');
-    const titleInp = document.getElementById('rev-title');
-    const commentInp = document.getElementById('rev-comment');
-    const charCounter = document.getElementById('revCharCounter');
-
-    const prevName = document.getElementById('prevName');
-    const prevRole = document.getElementById('prevRole');
-    const prevCourse = document.getElementById('prevCourse');
-    const prevStars = document.getElementById('prevStars');
-    const prevScore = document.getElementById('prevScore');
-    const prevTitle = document.getElementById('prevTitle');
-    const prevComment = document.getElementById('prevComment');
-    const prevAvatar = document.getElementById('prevAvatar');
-
-    function updateLivePreview() {
-      const name = nameInp.value.trim() || 'Your Name';
-      const role = roleInp.value || 'Adult Beginner';
-      const course = courseInp.value || 'Painting';
-      const title = titleInp.value.trim() || 'Headline will appear here';
-      const comment = commentInp.value.trim() || 'Your detailed feedback and experience will be previewed here in real-time...';
-
-      if (prevName) prevName.textContent = name;
-      if (prevRole) prevRole.textContent = role;
-      if (prevCourse) prevCourse.textContent = course;
-      if (prevStars) prevStars.textContent = renderStarString(selectedRating);
-      if (prevScore) prevScore.textContent = `${selectedRating}.0`;
-      if (prevTitle) prevTitle.textContent = `"${title}"`;
-      if (prevComment) prevComment.textContent = `"${comment}"`;
-      if (prevAvatar) {
-        prevAvatar.textContent = getInitials(name);
-        prevAvatar.style.background = getAvatarGradient(name);
-      }
-    }
 
     [nameInp, roleInp, courseInp, titleInp, commentInp].forEach(el => {
       if (!el) return;
