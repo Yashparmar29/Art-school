@@ -1,6 +1,6 @@
-# 🎨 Create Art School
+# 🎨 Art School
 
-A modern, full-stack website for **Create Art School** — an art education platform offering drawing, painting, sketching, watercolor, digital art, kids classes, weekend workshops, and portfolio preparation courses.
+A modern, full-stack website for **Art School** — an art education platform offering drawing, painting, sketching, watercolor, digital art, kids classes, weekend workshops, and portfolio preparation courses.
 
 **Project 22/64** | Category: Art School
 
@@ -28,7 +28,7 @@ A modern, full-stack website for **Create Art School** — an art education plat
 ## 📁 Project Structure
 
 ```
-create-art-school/
+art-school/
 ├── frontend/
 │   ├── index.html          # Home page
 │   ├── services.html       # Services listing
@@ -71,8 +71,8 @@ create-art-school/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/create-art-school.git
-cd create-art-school
+git clone https://github.com/YOUR_USERNAME/art-school.git
+cd art-school
 ```
 
 ### 2. Set up the backend
@@ -87,7 +87,7 @@ cp .env.example .env
 ```
 Edit `.env` with your values:
 ```env
-MONGO_URI=mongodb://localhost:27017/create-art-school
+MONGO_URI=mongodb://localhost:27017/art-school
 PORT=5000
 FRONTEND_URL=http://localhost:5500
 NODE_ENV=development
@@ -179,4 +179,4 @@ This project is built for educational and portfolio purposes.
 
 ---
 
-**Built with ❤️ for Create Art School** | Project 22/64
+**Built with ❤️ for Art School** | Project 22/64

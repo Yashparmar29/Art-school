@@ -1,5 +1,5 @@
 /**
- * Database Seeder — Create Art School
+ * Database Seeder — Art School
  *
  * Populates the MongoDB database with initial services and sample reviews.
  * Usage:  node seed.js   (or:  npm run seed)
@@ -91,7 +91,7 @@ const reviews = [
     rating: 5,
     title: 'Found my artistic voice & confidence',
     comment:
-      'Create Art School has been an incredible experience! The painting classes helped me discover a style I never knew I had. The teachers are patient and truly passionate about art.',
+      'Art School has been an incredible experience! The painting classes helped me discover a style I never knew I had. The teachers are patient and truly passionate about art.',
     course: 'Painting',
     role: 'Adult Hobbyist',
     helpfulCount: 18,
