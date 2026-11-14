@@ -2,10 +2,8 @@
   "name": "art-school",
   "version": "1.0.0",
   "description": "Art School - Full-stack Website",
-  "main": "backend/server.js",
   "scripts": {
-    "build": "echo 'Build complete'",
-    "start": "node backend/server.js"
+    "build": "echo 'No build step required'"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -13,7 +11,6 @@
     "express": "^4.18.2",
     "express-rate-limit": "^7.1.4",
     "helmet": "^7.1.0",
-    "mongoose": "^8.0.3",
-    "nodemon": "^3.0.2"
+    "mongoose": "^8.0.3"
   }
 }
