@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing Plans — Create Art School</title>
-  <meta name="description" content="Affordable, flexible monthly memberships for art lovers. Choose between Starter, Creator, and Pro studio plans.">
+  <meta name="description" content="Affordable, flexible monthly and quarterly memberships for art lovers. Choose between Starter, Creator, and Pro studio plans in Bangalore.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
@@ -34,76 +34,204 @@
   <!-- Page Header -->
   <header class="page-header">
     <div class="container">
-      <h1 class="slide-in" data-delay="0">Flexible Art Memberships</h1>
-      <p class="slide-in" data-delay="150">Transparent monthly plans designed to give you continuous studio access, mentor critiques, and premium materials.</p>
+      <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--secondary); font-weight: 700; margin-bottom: 0.5rem;" class="slide-in" data-delay="0">
+        Transparent Memberships • No Hidden Fees
+      </p>
+      <h1 class="slide-in" data-delay="100">Flexible Art Memberships</h1>
+      <p class="slide-in" data-delay="150" style="max-width: 680px; margin: 0 auto;">
+        Enjoy continuous studio access, mentor critiques, and all premium materials included in every single plan. Pause, reschedule, or cancel anytime.
+      </p>
     </div>
   </header>
 
   <!-- Pricing Cards Section -->
-  <section class="section-padding">
+  <section class="section-padding" style="background: var(--bg);">
     <div class="container">
+
+      <!-- Billing Toggle Switch -->
+      <div class="pricing-billing-switch slide-in" data-delay="100">
+        <button type="button" class="pricing-switch-btn active" id="btnMonthly">Monthly Billing</button>
+        <button type="button" class="pricing-switch-btn" id="btnQuarterly">
+          Quarterly <span class="pricing-save-badge">Save 15%</span>
+        </button>
+      </div>
 
       <div class="pricing-grid">
 
         <!-- Starter Plan -->
         <div class="pricing-card slide-in" data-delay="100">
           <h2 class="pricing-card__name">Starter</h2>
-          <div class="pricing-card__price">₹2,999<span>/month</span></div>
-          <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">Ideal for hobbyists exploring a creative weekend routine.</p>
+          <div class="pricing-card__price">
+            <span id="priceStarter">₹2,999</span><span id="unitStarter">/month</span>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.25rem;">Ideal for hobbyists exploring a creative weekend routine.</p>
           <ul class="pricing-card__features">
             <li>4 Studio classes per month (1/week)</li>
-            <li>Focus on 1 chosen art medium</li>
-            <li>Basic starter materials provided</li>
-            <li>Standard group batches (8–10 students)</li>
-            <li>Monthly progress critique &amp; review</li>
+            <li>Focus on 1 chosen medium (Painting or Drawing)</li>
+            <li>All studio materials &amp; pigments included</li>
+            <li>Standard group batches (max 8 students)</li>
+            <li>Monthly progress critique &amp; milestone review</li>
+            <li>Reschedule up to 1 class per month</li>
           </ul>
-          <a href="booking.html?service=Starter+Plan" class="btn btn-secondary" style="width: 100%;">Book Starter Plan</a>
+          <a href="booking.html?service=Starter+Plan" id="btnStarterLink" class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Choose Starter</a>
         </div>
 
         <!-- Creator Plan (Most Popular) -->
         <div class="pricing-card pricing-card--popular slide-in" data-delay="200">
-          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-badge">Most Popular Tier</div>
           <h2 class="pricing-card__name">Creator</h2>
-          <div class="pricing-card__price">₹5,499<span>/month</span></div>
-          <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">Our most chosen tier for committed aspiring artists.</p>
+          <div class="pricing-card__price">
+            <span id="priceCreator">₹5,499</span><span id="unitCreator">/month</span>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.25rem;">Our top choice for dedicated artists and consistent creators.</p>
           <ul class="pricing-card__features">
             <li>8 Studio classes per month (2/week)</li>
-            <li>Access to 3 art disciplines (Painting, Drawing, Watercolor)</li>
-            <li>Full professional materials included</li>
-            <li>Intimate small groups (4–6 students)</li>
-            <li>Weekly personalized feedback &amp; milestones</li>
-            <li>Annual student gallery exhibition showcase</li>
+            <li>Access to 3 art mediums (Painting, Drawing, Watercolor)</li>
+            <li>Full professional artist materials &amp; canvases</li>
+            <li>Intimate cohort batches (4–6 students)</li>
+            <li>Weekly personalized feedback &amp; technique coaching</li>
+            <li>Annual student gallery exhibition showcase entry</li>
             <li>1 Free weekend masterclass workshop every month</li>
+            <li>Reschedule up to 2 classes per month</li>
           </ul>
-          <a href="booking.html?service=Creator+Plan" class="btn btn-primary" style="width: 100%;">Book Creator Plan</a>
+          <a href="booking.html?service=Creator+Plan" id="btnCreatorLink" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Choose Creator</a>
         </div>
 
         <!-- Pro Plan -->
         <div class="pricing-card slide-in" data-delay="300">
-          <h2 class="pricing-card__name">Pro</h2>
-          <div class="pricing-card__price">₹8,999<span>/month</span></div>
-          <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">For professionals, portfolio builders, &amp; fine arts aspirants.</p>
+          <h2 class="pricing-card__name">Pro Master</h2>
+          <div class="pricing-card__price">
+            <span id="pricePro">₹8,999</span><span id="unitPro">/month</span>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.25rem;">For aspiring professionals, design entrance, &amp; intensive painters.</p>
           <ul class="pricing-card__features">
             <li>12 Studio classes per month (3/week)</li>
-            <li>Unlimited access to all 8 art mediums &amp; digital lab</li>
-            <li>Top-tier archival pigments, canvases, &amp; tablets</li>
-            <li>Combination of 1-on-1 private mentoring &amp; group reviews</li>
-            <li>Open studio access 6 days a week for self-practice</li>
-            <li>Comprehensive portfolio preparation &amp; university coaching</li>
-            <li>Priority entry to all exhibitions &amp; guest masterclasses</li>
+            <li>Unlimited access to all 8 fine art &amp; digital mediums</li>
+            <li>Dedicated 1-on-1 private mentoring sessions</li>
+            <li>Open studio access 6 days/week for self-practice</li>
+            <li>Comprehensive portfolio preparation for NID/NIFT/Srishti</li>
+            <li>Personal lockable studio storage locker</li>
+            <li>Free admission to all guest masterclasses &amp; talks</li>
+            <li>Unlimited class rescheduling flexibility</li>
           </ul>
-          <a href="booking.html?service=Pro+Plan" class="btn btn-secondary" style="width: 100%;">Book Pro Plan</a>
+          <a href="booking.html?service=Pro+Plan" id="btnProLink" class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Choose Pro Master</a>
         </div>
 
+      </div>
+
+      <!-- Feature Comparison Table -->
+      <div class="comparison-table-wrapper slide-in" data-delay="200">
+        <div style="padding: 1.75rem 1.75rem 0.5rem;">
+          <h3 style="color: var(--primary); margin-bottom: 0.25rem;">Detailed Plan Comparison</h3>
+          <p style="color: var(--text-light); font-size: 0.92rem; margin: 0;">Compare all features side-by-side to find the right fit for your schedule.</p>
+        </div>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Features &amp; Privileges</th>
+              <th>Starter</th>
+              <th>Creator</th>
+              <th>Pro Master</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Classes Per Month</strong></td>
+              <td>4 Classes (1 / week)</td>
+              <td>8 Classes (2 / week)</td>
+              <td>12 Classes (3 / week)</td>
+            </tr>
+            <tr>
+              <td><strong>Art Mediums Included</strong></td>
+              <td>1 Medium</td>
+              <td>3 Mediums</td>
+              <td>All 8 Mediums + Digital</td>
+            </tr>
+            <tr>
+              <td><strong>Cohort Batch Size</strong></td>
+              <td>Max 8 Students</td>
+              <td>4–6 Students</td>
+              <td>1-on-1 + Small Group</td>
+            </tr>
+            <tr>
+              <td><strong>All Materials Provided</strong></td>
+              <td>✅ Yes</td>
+              <td>✅ Yes (Premium)</td>
+              <td>✅ Yes (Archival Grade)</td>
+            </tr>
+            <tr>
+              <td><strong>Open Studio Self-Practice</strong></td>
+              <td>❌ No</td>
+              <td>2 Hours / week</td>
+              <td>Unlimited (6 Days / wk)</td>
+            </tr>
+            <tr>
+              <td><strong>Free Weekend Workshops</strong></td>
+              <td>❌ No</td>
+              <td>1 Free / month</td>
+              <td>All Free</td>
+            </tr>
+            <tr>
+              <td><strong>Private Storage Locker</strong></td>
+              <td>❌ No</td>
+              <td>Shared Shelf</td>
+              <td>Dedicated Locker</td>
+            </tr>
+            <tr>
+              <td><strong>Portfolio Review &amp; Coaching</strong></td>
+              <td>❌ No</td>
+              <td>Monthly</td>
+              <td>Weekly Intensive</td>
+            </tr>
+            <tr>
+              <td><strong>Exhibition Showcase Entry</strong></td>
+              <td>Visitor Pass</td>
+              <td>Exhibiting Artist</td>
+              <td>Featured Solo Wall</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- Guarantee & Flexibility Section -->
   <section class="section-padding" style="background: #fff;">
     <div class="container">
       <div class="section-header slide-in">
+        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--secondary); font-weight: 700; margin-bottom: 0.35rem;">Peace of Mind</p>
+        <h2>Our Commitment to You</h2>
+        <p>Flexible policies designed for real-life schedules.</p>
+      </div>
+
+      <div class="grid grid-3 slide-in" data-delay="100">
+        <div class="card" style="padding: 2rem;">
+          <span style="font-size: 2.2rem; display: block; margin-bottom: 0.75rem;">🔄</span>
+          <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Flexible Rescheduling</h3>
+          <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Traveling or caught up with work? Simply notify us 24 hours in advance to reschedule your class credits.</p>
+        </div>
+
+        <div class="card" style="padding: 2rem;">
+          <span style="font-size: 2.2rem; display: block; margin-bottom: 0.75rem;">⏸️</span>
+          <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Pause Anytime</h3>
+          <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Taking exams or going on vacation? Pause your monthly subscription for up to 60 days with zero penalty.</p>
+        </div>
+
+        <div class="card" style="padding: 2rem;">
+          <span style="font-size: 2.2rem; display: block; margin-bottom: 0.75rem;">🛡️</span>
+          <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Trial Guarantee</h3>
+          <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Take our 60-minute complimentary trial class before paying any fees. No credit card or commitment required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding" style="background: var(--bg);">
+    <div class="container" style="max-width: 860px;">
+      <div class="section-header slide-in">
+        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--secondary); font-weight: 700; margin-bottom: 0.35rem;">Got Questions?</p>
         <h2>Frequently Asked Questions</h2>
         <p>Everything you need to know about joining Create Art School memberships.</p>
       </div>
@@ -114,7 +242,7 @@
           <button class="accordion-btn">Do I need prior drawing or painting experience?</button>
           <div class="accordion-content">
             <div class="accordion-content__inner">
-              Not at all! Over 70% of our new students have never picked up a paintbrush before joining us. Our curriculum starts from foundational mark-making, posture, and perception before progressing into complex techniques.
+              Not at all! Over 70% of our students are adults who haven't held a paintbrush since school. Our mentors meet you at your current level and introduce techniques step-by-step with zero pressure.
             </div>
           </div>
         </div>
@@ -150,7 +278,7 @@
           <button class="accordion-btn">Do you offer a free trial class before committing?</button>
           <div class="accordion-content">
             <div class="accordion-content__inner">
-              Yes! We offer a 60-minute complimentary trial class for all first-time visitors. Head over to our <a href="booking.html" style="color: var(--secondary); text-decoration: underline;">Booking page</a> to reserve your slot.
+              Yes! We offer a 60-minute complimentary trial class for all first-time visitors. Head over to our <a href="booking.html" style="color: var(--secondary); text-decoration: underline; font-weight: 600;">Booking page</a> to reserve your slot.
             </div>
           </div>
         </div>
@@ -160,11 +288,16 @@
   </section>
 
   <!-- CTA Banner -->
-  <section class="cta-banner">
+  <section class="section-padding" style="background: linear-gradient(135deg, var(--primary) 0%, #3f256c 100%); color: #fff; text-align: center;">
     <div class="container slide-in">
-      <h2>Start Your Creative Transformation Today</h2>
-      <p>Have specific requirements or seeking corporate art sessions? Reach out to our admissions team.</p>
-      <a href="contact.html" class="btn btn-primary">Speak With An Advisor</a>
+      <h2 style="color: #fff; margin-bottom: 0.75rem; font-size: 2.2rem;">Start Your Creative Transformation Today</h2>
+      <p style="color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem;">
+        Speak with our studio coordinator to customize a plan that matches your creative goals.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="booking.html" class="btn btn-primary" style="background: var(--secondary); border-color: var(--secondary); color: #fff;">Book a Free Trial</a>
+        <a href="contact.html" class="btn btn-secondary" style="border-color: #fff; color: #fff;">Contact Studio Advisors</a>
+      </div>
     </div>
   </section>
 
@@ -227,7 +360,54 @@
   <script type="module">
     import './js/main.js';
 
-    // FAQ Accordion functionality
+    // 1. Billing Switch Logic (Monthly vs Quarterly 15% discount)
+    const btnMonthly = document.getElementById('btnMonthly');
+    const btnQuarterly = document.getElementById('btnQuarterly');
+
+    const priceStarter = document.getElementById('priceStarter');
+    const unitStarter = document.getElementById('unitStarter');
+    const priceCreator = document.getElementById('priceCreator');
+    const unitCreator = document.getElementById('unitCreator');
+    const pricePro = document.getElementById('pricePro');
+    const unitPro = document.getElementById('unitPro');
+
+    const btnStarterLink = document.getElementById('btnStarterLink');
+    const btnCreatorLink = document.getElementById('btnCreatorLink');
+    const btnProLink = document.getElementById('btnProLink');
+
+    btnMonthly.addEventListener('click', () => {
+      btnMonthly.classList.add('active');
+      btnQuarterly.classList.remove('active');
+
+      priceStarter.textContent = '₹2,999';
+      unitStarter.textContent = '/month';
+      priceCreator.textContent = '₹5,499';
+      unitCreator.textContent = '/month';
+      pricePro.textContent = '₹8,999';
+      unitPro.textContent = '/month';
+
+      btnStarterLink.href = 'booking.html?service=Starter+Plan';
+      btnCreatorLink.href = 'booking.html?service=Creator+Plan';
+      btnProLink.href = 'booking.html?service=Pro+Plan';
+    });
+
+    btnQuarterly.addEventListener('click', () => {
+      btnQuarterly.classList.add('active');
+      btnMonthly.classList.remove('active');
+
+      priceStarter.textContent = '₹2,549';
+      unitStarter.textContent = '/month (billed ₹7,647 quarterly)';
+      priceCreator.textContent = '₹4,674';
+      unitCreator.textContent = '/month (billed ₹14,022 quarterly)';
+      pricePro.textContent = '₹7,649';
+      unitPro.textContent = '/month (billed ₹22,947 quarterly)';
+
+      btnStarterLink.href = 'booking.html?service=Starter+Plan+Quarterly';
+      btnCreatorLink.href = 'booking.html?service=Creator+Plan+Quarterly';
+      btnProLink.href = 'booking.html?service=Pro+Plan+Quarterly';
+    });
+
+    // 2. FAQ Accordion functionality
     const accordionButtons = document.querySelectorAll('.accordion-btn');
 
     accordionButtons.forEach(btn => {
@@ -236,11 +416,11 @@
         const content = item.querySelector('.accordion-content');
         const isActive = btn.classList.contains('active');
 
-        // Close other items
         accordionButtons.forEach(otherBtn => {
           if (otherBtn !== btn) {
             otherBtn.classList.remove('active');
-            otherBtn.parentElement.querySelector('.accordion-content').style.maxHeight = null;
+            const otherContent = otherBtn.parentElement.querySelector('.accordion-content');
+            if (otherContent) otherContent.style.maxHeight = null;
           }
         });
 

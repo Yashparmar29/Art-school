@@ -450,6 +450,14 @@ p {
   font-weight: 700;
 }
 
+.card__price span {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-light);
+  margin-left: 0.25rem;
+}
+
 /* ==========================================================================
    9. Section Headers
    ========================================================================== */
@@ -640,6 +648,13 @@ p {
   font-size: 1.1rem;
 }
 
+@media (hover: none) {
+  .gallery-item__overlay {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(43,26,74,0.85) 0%, transparent 65%);
+  }
+}
+
 /* Lightbox */
 .lightbox {
   display: none;
@@ -660,27 +675,45 @@ p {
   position: relative;
   max-width: 90vw;
   max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .lightbox__content img,
 .lightbox__content svg {
-  max-width: 90vw;
-  max-height: 85vh;
+  max-width: 520px;
+  width: 100%;
+  max-height: 55vh;
   object-fit: contain;
   border-radius: var(--radius-sm);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
 }
 
 .lightbox__close {
   position: absolute;
-  top: -40px;
-  right: 0;
+  top: 1.5rem;
+  right: 1.5rem;
   color: var(--text-white);
-  font-size: 2rem;
-  background: none;
+  font-size: 2.2rem;
+  background: rgba(255, 255, 255, 0.15);
   border: none;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0;
   line-height: 1;
+  z-index: 2010;
+  transition: background var(--transition);
+}
+
+.lightbox__close:hover {
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .lightbox__close:focus-visible {
@@ -692,8 +725,8 @@ p {
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-white);
-  font-size: 2.5rem;
-  background: rgba(255,255,255,0.1);
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.18);
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -702,19 +735,20 @@ p {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background var(--transition);
+  z-index: 2010;
+  transition: background var(--transition), transform var(--transition);
 }
 
 .lightbox__nav:hover {
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .lightbox__nav:focus-visible {
   outline: 2px solid var(--secondary);
 }
 
-.lightbox__nav--prev { left: -70px; }
-.lightbox__nav--next { right: -70px; }
+.lightbox__nav--prev { left: 1.75rem; }
+.lightbox__nav--next { right: 1.75rem; }
 
 /* ==========================================================================
    13. Pricing Cards
@@ -1994,4 +2028,266 @@ p {
   .reviews-filter-group { flex-direction: column; align-items: stretch; }
   .filter-select { width: 100%; }
   .commute-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   24. Course Catalog & Services Styles
+   ========================================================================== */
+.course-filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+.course-filter-btn {
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-pill);
+  background: var(--bg-white);
+  border: 1.5px solid #e0e0e0;
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.course-filter-btn:hover,
+.course-filter-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(43, 26, 74, 0.2);
+}
+
+.course-card-enhanced {
+  background: var(--bg-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+.course-card-enhanced:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+.course-card-enhanced__badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 122, 0, 0.12);
+  color: var(--secondary-dark);
+}
+.course-card-enhanced__icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+.course-card-enhanced__title {
+  font-size: 1.35rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+.course-card-enhanced__desc {
+  color: var(--text-light);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+.course-card-enhanced__highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem 0;
+  border-top: 1px dashed #eee;
+  padding-top: 1rem;
+}
+.course-card-enhanced__highlights li {
+  font-size: 0.85rem;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.course-card-enhanced__highlights li::before {
+  content: '✓';
+  color: var(--secondary);
+  font-weight: 700;
+}
+.course-card-enhanced__footer {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.course-card-enhanced__price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: var(--font);
+  color: var(--primary);
+  line-height: 1;
+}
+.course-card-enhanced__price span {
+  font-size: 0.85rem;
+  font-family: inherit;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   25. Enhanced Booking Page Styles
+   ========================================================================== */
+.booking-grid-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+.booking-sidebar-card {
+  background: var(--bg-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  border: 1px solid rgba(0,0,0,0.05);
+  position: sticky;
+  top: 90px;
+}
+.booking-step-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(43, 26, 74, 0.08);
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1rem;
+}
+.booking-summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.92rem;
+}
+.booking-summary-row:last-child {
+  border-bottom: none;
+}
+.booking-perk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.88rem;
+}
+.booking-perk-item span:first-child {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   26. Pricing Billing Toggle & Comparison Table
+   ========================================================================== */
+.pricing-billing-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.pricing-switch-btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid #ddd;
+  background: #fff;
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.pricing-switch-btn.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.pricing-save-badge {
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
+  margin-left: 0.35rem;
+}
+
+.comparison-table-wrapper {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow-x: auto;
+  margin-top: 3.5rem;
+}
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+.comparison-table th,
+.comparison-table td {
+  padding: 1.15rem 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+.comparison-table th {
+  background: #f8f8fc;
+  font-weight: 700;
+  color: var(--primary);
+}
+.comparison-table tr:hover td {
+  background: #fafafc;
+}
+
+/* ==========================================================================
+   27. Instructors & Studio Experience
+   ========================================================================== */
+.instructor-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  text-align: center;
+  transition: transform var(--transition);
+}
+.instructor-card:hover {
+  transform: translateY(-4px);
+}
+.instructor-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 0 auto 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 900px) {
+  .booking-grid-layout { grid-template-columns: 1fr; }
+  .booking-sidebar-card { position: static; }
 }

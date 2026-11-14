@@ -13,7 +13,9 @@ import { config } from '../config.js';
   root.style.setProperty('--primary', config.primary);
   root.style.setProperty('--secondary', config.secondary);
   root.style.setProperty('--font', `'${config.font}', cursive`);
-  document.title = `${config.businessName} — ${document.title || config.category}`;
+  if (!document.title.includes(config.businessName)) {
+    document.title = `${config.businessName} — ${document.title || config.category}`;
+  }
 })();
 
 /* ------------------------------------------------------------------ */

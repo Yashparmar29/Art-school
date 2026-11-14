@@ -22,9 +22,22 @@ const bookingSchema = new mongoose.Schema(
         'Please enter a valid 10-digit Indian phone number',
       ],
     },
+    email: {
+      type: String,
+      trim: true,
+      default: '',
+    },
     service: {
       type: String,
       required: [true, 'Service is required'],
+    },
+    timeSlot: {
+      type: String,
+      default: 'Morning (10:00 AM - 12:00 PM)',
+    },
+    classType: {
+      type: String,
+      default: 'In-Studio Class',
     },
     date: {
       type: String,

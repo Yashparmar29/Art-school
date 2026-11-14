@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book a Class — Create Art School</title>
-  <meta name="description" content="Reserve your art class or free trial session at Create Art School. Select your course, choose a date, and begin creating.">
+  <meta name="description" content="Reserve your art class or free trial session at Create Art School Bangalore. Select your course, choose a date, and begin creating.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
@@ -34,94 +34,202 @@
   <!-- Page Header -->
   <header class="page-header">
     <div class="container">
-      <h1 class="slide-in" data-delay="0">Book Your Art Session</h1>
-      <p class="slide-in" data-delay="150">Reserve your complimentary trial seat or enroll in a full course. We look forward to creating with you!</p>
+      <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--secondary); font-weight: 700; margin-bottom: 0.5rem;" class="slide-in" data-delay="0">
+        Easel Reservation • Free Trial &amp; Enrollment
+      </p>
+      <h1 class="slide-in" data-delay="100">Reserve Your Studio Easel</h1>
+      <p class="slide-in" data-delay="150" style="max-width: 680px; margin: 0 auto;">
+        Reserve your complimentary 60-minute trial session or enroll in a regular course. All supplies and guidance are prepared for you.
+      </p>
     </div>
   </header>
 
   <!-- Booking Section -->
-  <section class="section-padding">
-    <div class="container" style="max-width: 780px;">
+  <section class="section-padding" style="background: var(--bg);">
+    <div class="container">
 
-      <div class="card slide-in" data-delay="100">
-        <h2 style="margin-bottom: 0.5rem; text-align: center;">Class Reservation Form</h2>
-        <p style="text-align: center; margin-bottom: 2rem; color: var(--text-light);">
-          Fill out the details below. Our studio coordinator will call to confirm your schedule.
-        </p>
+      <div class="booking-grid-layout">
 
-        <!-- Success Message -->
-        <div id="bookingSuccess" class="form-success" role="alert" style="margin-bottom: 1.5rem;">
-          <h3 style="color: #2e7d32; font-size: 1.5rem; margin-bottom: 0.25rem;">🎉 Booking Confirmed!</h3>
-          <p style="margin: 0; color: #2e7d32;">We have received your class request. We'll contact you shortly to confirm your class schedule!</p>
+        <!-- Form Column -->
+        <div class="card slide-in" data-delay="100" style="padding: 2.5rem;">
+          <h2 style="margin-bottom: 0.5rem; color: var(--primary);">Class Reservation Form</h2>
+          <p style="margin-bottom: 2rem; color: var(--text-light); font-size: 0.95rem;">
+            Please provide your details below. Our studio coordinator will call to confirm your seat and preferred easel time.
+          </p>
+
+          <!-- Success Message -->
+          <div id="bookingSuccess" class="form-success" role="alert" style="margin-bottom: 1.5rem;">
+            <div style="font-weight: 700; font-size: 1.2rem; margin-bottom: 0.35rem; color: #2e7d32;">🎉 Booking Confirmed!</div>
+            <p style="margin-bottom: 0.75rem; color: #2e7d32;">
+              Thank you, <strong id="successBookingName">there</strong>! We have reserved your seat for <strong id="successBookingService">your course</strong> on <strong id="successBookingDate">your selected date</strong>.
+            </p>
+            <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #2e7d32;">
+              Our studio coordinator will call/WhatsApp you at your phone number to share directions and batch timing confirmation.
+            </p>
+            <button type="button" id="btnBookAnother" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.45rem 1rem;">
+              Make Another Booking
+            </button>
+          </div>
+
+          <!-- Error Message -->
+          <div id="bookingError" class="form-error" role="alert" style="margin-bottom: 1.5rem;"></div>
+
+          <form id="bookingForm" novalidate>
+
+            <!-- Name -->
+            <div class="form-group" id="group-name">
+              <label for="name">Your Full Name <span style="color:#d32f2f;">*</span></label>
+              <input type="text" id="name" name="name" placeholder="e.g. Priya Sharma" required autocomplete="name">
+              <div class="error-message">Please enter your full name (at least 2 characters).</div>
+            </div>
+
+            <!-- Phone & Email Grid -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group" id="group-phone">
+                <label for="phone">Phone / WhatsApp (10 digits) <span style="color:#d32f2f;">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g. 9876543210" maxlength="10" required autocomplete="tel">
+                <div class="error-message">Please enter a valid 10-digit Indian phone number (starting with 6–9).</div>
+              </div>
+
+              <div class="form-group" id="group-email">
+                <label for="email">Email Address <span style="color:#d32f2f;">*</span></label>
+                <input type="email" id="email" name="email" placeholder="e.g. priya@example.com" required autocomplete="email">
+                <div class="error-message">Please enter a valid email address for confirmation.</div>
+              </div>
+            </div>
+
+            <!-- Service Selection -->
+            <div class="form-group" id="group-service">
+              <label for="service">Select Course or Membership Plan <span style="color:#d32f2f;">*</span></label>
+              <select id="service" name="service" required>
+                <option value="">-- Choose Course or Plan --</option>
+                <optgroup label="Complimentary Trial">
+                  <option value="Free Trial Class" selected>Free Trial Class (60 min — Complimentary)</option>
+                </optgroup>
+                <optgroup label="Fine Arts &amp; Foundation Courses">
+                  <option value="Drawing">Drawing (Fundamentals, Charcoal &amp; Ink)</option>
+                  <option value="Painting">Painting (Acrylic &amp; Oil Canvas)</option>
+                  <option value="Watercolor">Watercolor (Botanical &amp; Landscapes)</option>
+                  <option value="Sketching">Sketching &amp; Urban Gesture Drawing</option>
+                  <option value="Digital Art">Digital Art &amp; Illustration (iPad/Procreate)</option>
+                  <option value="Kids Art Classes">Kids Art Classes (Ages 5–12)</option>
+                  <option value="Weekend Workshops">Weekend Intensive Workshops (3 hrs)</option>
+                  <option value="Portfolio Prep">Portfolio Prep &amp; University Mentorship</option>
+                </optgroup>
+                <optgroup label="Monthly Membership Tiers">
+                  <option value="Starter Plan">Starter Membership (₹2,999/mo)</option>
+                  <option value="Creator Plan">Creator Membership — Most Popular (₹5,499/mo)</option>
+                  <option value="Pro Plan">Pro Master Membership (₹8,999/mo)</option>
+                </optgroup>
+              </select>
+              <div class="error-message">Please select a course or membership tier.</div>
+            </div>
+
+            <!-- Date & Time Slot Grid -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group" id="group-date">
+                <label for="date">Preferred Starting Date <span style="color:#d32f2f;">*</span></label>
+                <input type="date" id="date" name="date" required>
+                <div class="error-message">Please choose today or a future date.</div>
+              </div>
+
+              <div class="form-group" id="group-timeSlot">
+                <label for="timeSlot">Preferred Time Slot</label>
+                <select id="timeSlot" name="timeSlot">
+                  <option value="Morning Batch (10:00 AM – 12:00 PM)">Morning Batch (10:00 AM – 12:00 PM)</option>
+                  <option value="Afternoon Batch (2:00 PM – 4:00 PM)">Afternoon Batch (2:00 PM – 4:00 PM)</option>
+                  <option value="Evening Batch (5:30 PM – 7:30 PM)">Evening Batch (5:30 PM – 7:30 PM)</option>
+                  <option value="Weekend Special (Saturday 11:00 AM – 1:00 PM)">Weekend Special (Saturday 11:00 AM)</option>
+                  <option value="Weekend Special (Sunday 11:00 AM – 1:00 PM)">Weekend Special (Sunday 11:00 AM)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Class Format / Learning Mode -->
+            <div class="form-group">
+              <label>Learning Format</label>
+              <div class="preferred-contact-group" id="classFormatGroup">
+                <label class="preferred-pill active">
+                  <input type="radio" name="classType" value="In-Studio Class" checked>
+                  <span>🏛️ In-Studio (Koramangala)</span>
+                </label>
+                <label class="preferred-pill">
+                  <input type="radio" name="classType" value="Weekend Workshop">
+                  <span>🖌️ Weekend Workshop</span>
+                </label>
+                <label class="preferred-pill">
+                  <input type="radio" name="classType" value="1-on-1 Mentorship">
+                  <span>🎯 1-on-1 Mentorship</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Experience / Note -->
+            <div class="form-group">
+              <label for="note">Any Prior Experience or Special Requests? (Optional)</label>
+              <textarea id="note" name="note" placeholder="Tell us if you are an absolute beginner, your favorite medium, or any specific goals..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1rem;">
+              Confirm My Booking
+            </button>
+
+          </form>
         </div>
 
-        <!-- Error Message -->
-        <div id="bookingError" class="form-error" role="alert" style="margin-bottom: 1.5rem;">
-          <!-- Dynamically populated -->
+        <!-- Live Summary Sidebar -->
+        <div class="slide-in" data-delay="200">
+          <div class="booking-sidebar-card">
+            <span class="booking-step-badge">Live Reservation Summary</span>
+            <h3 id="sideServiceName" style="color: var(--primary); margin-bottom: 0.5rem; font-size: 1.4rem;">
+              Free Trial Class
+            </h3>
+            <p id="sideServiceDesc" style="color: var(--text-light); font-size: 0.88rem; line-height: 1.5; margin-bottom: 1.25rem;">
+              A complimentary 60-minute session to tour the studio, meet instructors, and paint your first canvas.
+            </p>
+
+            <div style="background: #fafafc; border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin-bottom: 1.5rem;">
+              <div class="booking-summary-row">
+                <span style="color: var(--text-light);">Scheduled Date:</span>
+                <strong id="sideDateDisplay">Select a date</strong>
+              </div>
+              <div class="booking-summary-row">
+                <span style="color: var(--text-light);">Time Slot:</span>
+                <strong id="sideTimeDisplay" style="font-size: 0.85rem;">Morning (10 AM)</strong>
+              </div>
+              <div class="booking-summary-row">
+                <span style="color: var(--text-light);">Format:</span>
+                <strong id="sideFormatDisplay">In-Studio Class</strong>
+              </div>
+              <div class="booking-summary-row">
+                <span style="color: var(--text-light);">Estimated Fee:</span>
+                <strong id="sidePriceDisplay" style="color: var(--secondary); font-size: 1.15rem;">FREE</strong>
+              </div>
+            </div>
+
+            <h4 style="margin-bottom: 0.75rem; color: var(--primary); font-size: 1rem;">What You Get:</h4>
+            <div class="booking-perk-item">
+              <span>🎨</span>
+              <div><strong>All Supplies Provided:</strong> Brushes, canvases, acrylics &amp; easels ready on your station.</div>
+            </div>
+            <div class="booking-perk-item">
+              <span>📞</span>
+              <div><strong>Personal Confirmation:</strong> We confirm your schedule by call/WhatsApp within 2 hours.</div>
+            </div>
+            <div class="booking-perk-item">
+              <span>🔄</span>
+              <div><strong>Zero Cancellation Fee:</strong> Reschedule anytime with a simple WhatsApp message.</div>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid #eee; text-align: center;">
+              <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 0.5rem;">Need urgent assistance or group booking?</p>
+              <a href="tel:+919876543210" style="color: var(--secondary); font-weight: 700; font-size: 0.95rem;">
+                📞 +91 98765 43210 (Studio Desk)
+              </a>
+            </div>
+          </div>
         </div>
-
-        <form id="bookingForm" novalidate>
-
-          <!-- Full Name -->
-          <div class="form-group" id="group-name">
-            <label for="name">Full Name <span style="color:#d32f2f;">*</span></label>
-            <input type="text" id="name" name="name" placeholder="e.g. Priya Sharma" required autocomplete="name">
-            <div class="error-message" id="err-name">Please enter your full name.</div>
-          </div>
-
-          <!-- Phone Number -->
-          <div class="form-group" id="group-phone">
-            <label for="phone">Phone Number (10 digits) <span style="color:#d32f2f;">*</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="e.g. 9876543210" maxlength="10" required autocomplete="tel">
-            <div class="error-message" id="err-phone">Please enter a valid 10-digit Indian phone number (starting with 6, 7, 8, or 9).</div>
-          </div>
-
-          <!-- Service Selection -->
-          <div class="form-group" id="group-service">
-            <label for="service">Select Course or Plan <span style="color:#d32f2f;">*</span></label>
-            <select id="service" name="service" required>
-              <option value="">-- Choose an option --</option>
-              <optgroup label="Core Courses">
-                <option value="Drawing">Drawing (Fundamentals &amp; Charcoal)</option>
-                <option value="Painting">Painting (Acrylic &amp; Oil)</option>
-                <option value="Sketching">Sketching &amp; Gesture Art</option>
-                <option value="Watercolor">Watercolor &amp; Botanicals</option>
-                <option value="Digital Art">Digital Art &amp; Illustration</option>
-                <option value="Kids Art Classes">Kids Art Classes (Ages 5–12)</option>
-                <option value="Weekend Workshops">Weekend Workshops</option>
-                <option value="Portfolio Prep">Portfolio Prep &amp; Mentorship</option>
-              </optgroup>
-              <optgroup label="Monthly Membership Plans">
-                <option value="Starter Plan">Starter Plan (₹2,999/mo)</option>
-                <option value="Creator Plan">Creator Plan — Most Popular (₹5,499/mo)</option>
-                <option value="Pro Plan">Pro Plan (₹8,999/mo)</option>
-              </optgroup>
-              <optgroup label="Free Trial">
-                <option value="Free Trial Class">Free Trial Class (60 min)</option>
-              </optgroup>
-            </select>
-            <div class="error-message" id="err-service">Please select a course or plan.</div>
-          </div>
-
-          <!-- Date -->
-          <div class="form-group" id="group-date">
-            <label for="date">Preferred Starting Date <span style="color:#d32f2f;">*</span></label>
-            <input type="date" id="date" name="date" required>
-            <div class="error-message" id="err-date">Please select a valid date (today or future).</div>
-          </div>
-
-          <!-- Optional Note -->
-          <div class="form-group">
-            <label for="note">Any Prior Experience or Special Requests? (Optional)</label>
-            <textarea id="note" name="note" placeholder="Tell us about your art background, preferred timings (morning/evening), or anything else you'd like us to know..."></textarea>
-          </div>
-
-          <!-- Submit Button -->
-          <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1rem;">
-            Confirm Booking
-          </button>
-
-        </form>
 
       </div>
 
@@ -188,118 +296,200 @@
     import { createBooking } from './js/api.js';
     import './js/main.js';
 
-    // 1. Min date validation (set today's date as min)
+    // 1. Min date setup (today or future)
     const dateInput = document.getElementById('date');
     const today = new Date().toISOString().split('T')[0];
     dateInput.min = today;
     dateInput.value = today;
 
-    // 2. Prefill service from URL query param ?service=...
+    // 2. Service details map for live sidebar
+    const serviceDetails = {
+      'Free Trial Class': { desc: 'A 60-minute complimentary trial class to tour the studio and paint your first canvas.', price: 'FREE' },
+      'Drawing': { desc: 'Foundations of pencil, graphite, and charcoal shading on heavyweight drawing paper.', price: '₹2,000 / mo' },
+      'Painting': { desc: 'Acrylic and oil canvas techniques, color mixing, and composition.', price: '₹2,500 / mo' },
+      'Watercolor': { desc: 'Luminous wet-on-wet washes, botanicals, and landscape painting.', price: '₹2,200 / mo' },
+      'Sketching': { desc: 'Urban sketching, rapid gesture drawings, and ink wash journals.', price: '₹1,800 / mo' },
+      'Digital Art': { desc: 'Digital illustration, brushes, and concept art on iPad Procreate.', price: '₹3,000 / mo' },
+      'Kids Art Classes': { desc: 'Creative hands-on art, clay, and painting for ages 5–12.', price: '₹1,500 / mo' },
+      'Weekend Workshops': { desc: '3-hour intensive session with finished takeaway artwork.', price: '₹1,000 / session' },
+      'Portfolio Prep': { desc: '1-on-1 university application mentoring for design & fine art degrees.', price: '₹5,000 / mo' },
+      'Starter Plan': { desc: 'Monthly membership: 4 studio classes + all materials included.', price: '₹2,999 / mo' },
+      'Creator Plan': { desc: 'Monthly membership: 8 studio classes + 3 mediums + exhibition entry.', price: '₹5,499 / mo' },
+      'Pro Plan': { desc: 'Monthly membership: 12 classes + 1-on-1 mentorship + open studio.', price: '₹8,999 / mo' }
+    };
+
+    // 3. Prefill service from URL param ?service=...
     const urlParams = new URLSearchParams(window.location.search);
     const prefillService = urlParams.get('service');
     const serviceSelect = document.getElementById('service');
 
     if (prefillService) {
+      const cleanPrefill = prefillService.toLowerCase();
       for (const option of serviceSelect.options) {
-        if (option.value.toLowerCase() === prefillService.toLowerCase() ||
-            option.value.toLowerCase().includes(prefillService.toLowerCase())) {
+        if (!option.value) continue;
+        const optVal = option.value.toLowerCase();
+        if (optVal === cleanPrefill || optVal.includes(cleanPrefill) || cleanPrefill.includes(optVal)) {
           option.selected = true;
           break;
         }
       }
     }
 
-    // 3. Validation helpers
+    // 4. Update Live Sidebar
+    const sideServiceName = document.getElementById('sideServiceName');
+    const sideServiceDesc = document.getElementById('sideServiceDesc');
+    const sideDateDisplay = document.getElementById('sideDateDisplay');
+    const sideTimeDisplay = document.getElementById('sideTimeDisplay');
+    const sideFormatDisplay = document.getElementById('sideFormatDisplay');
+    const sidePriceDisplay = document.getElementById('sidePriceDisplay');
+    const timeSlotSelect = document.getElementById('timeSlot');
+
+    function updateSidebar() {
+      const selected = serviceSelect.value || 'Free Trial Class';
+      const details = serviceDetails[selected] || { desc: 'Comprehensive guided fine arts instruction.', price: '₹2,500' };
+
+      sideServiceName.textContent = selected;
+      sideServiceDesc.textContent = details.desc;
+      sidePriceDisplay.textContent = details.price;
+      sideDateDisplay.textContent = dateInput.value ? new Date(dateInput.value).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : 'Select Date';
+      sideTimeDisplay.textContent = timeSlotSelect.value.split('(')[0].trim();
+
+      const checkedFormat = document.querySelector('input[name="classType"]:checked');
+      sideFormatDisplay.textContent = checkedFormat ? checkedFormat.value : 'In-Studio Class';
+    }
+
+    serviceSelect.addEventListener('change', updateSidebar);
+    dateInput.addEventListener('change', updateSidebar);
+    timeSlotSelect.addEventListener('change', updateSidebar);
+
+    // Format radio pills
+    const formatPills = document.querySelectorAll('#classFormatGroup .preferred-pill');
+    formatPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        formatPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const r = pill.querySelector('input[type="radio"]');
+        if (r) r.checked = true;
+        updateSidebar();
+      });
+    });
+
+    updateSidebar();
+
+    // 5. Validation and Form Submission
     const form = document.getElementById('bookingForm');
     const nameInput = document.getElementById('name');
     const phoneInput = document.getElementById('phone');
+    const emailInput = document.getElementById('email');
     const submitBtn = document.getElementById('submitBtn');
     const successBox = document.getElementById('bookingSuccess');
     const errorBox = document.getElementById('bookingError');
+    const successBookingName = document.getElementById('successBookingName');
+    const successBookingService = document.getElementById('successBookingService');
+    const successBookingDate = document.getElementById('successBookingDate');
+    const btnBookAnother = document.getElementById('btnBookAnother');
 
-    function validateName() {
-      const group = document.getElementById('group-name');
-      const valid = nameInput.value.trim().length >= 2;
-      group.classList.toggle('has-error', !valid);
-      return valid;
+    function isValidEmail(email) {
+      return /^\S+@\S+\.\S+$/.test(email);
     }
 
-    function validatePhone() {
-      const group = document.getElementById('group-phone');
-      const phoneVal = phoneInput.value.trim();
-      const valid = /^[6-9]\d{9}$/.test(phoneVal);
-      group.classList.toggle('has-error', !valid);
-      return valid;
+    [nameInput, phoneInput, emailInput, serviceSelect, dateInput].forEach(el => {
+      if (!el) return;
+      el.addEventListener('input', () => {
+        const grp = el.closest('.form-group');
+        if (grp) grp.classList.remove('has-error');
+      });
+    });
+
+    if (btnBookAnother) {
+      btnBookAnother.addEventListener('click', () => {
+        successBox.classList.remove('visible');
+        form.style.display = 'block';
+        form.reset();
+        dateInput.value = today;
+        updateSidebar();
+      });
     }
 
-    function validateService() {
-      const group = document.getElementById('group-service');
-      const valid = Boolean(serviceSelect.value);
-      group.classList.toggle('has-error', !valid);
-      return valid;
-    }
-
-    function validateDate() {
-      const group = document.getElementById('group-date');
-      const val = dateInput.value;
-      const valid = Boolean(val) && val >= today;
-      group.classList.toggle('has-error', !valid);
-      return valid;
-    }
-
-    nameInput.addEventListener('blur', validateName);
-    phoneInput.addEventListener('blur', validatePhone);
-    serviceSelect.addEventListener('change', validateService);
-    dateInput.addEventListener('change', validateDate);
-
-    // 4. Form Submission
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       successBox.classList.remove('visible');
       errorBox.classList.remove('visible');
 
-      const isNameValid = validateName();
-      const isPhoneValid = validatePhone();
-      const isServiceValid = validateService();
-      const isDateValid = validateDate();
+      const nameVal = nameInput.value.trim();
+      const phoneVal = phoneInput.value.trim();
+      const emailVal = emailInput.value.trim();
+      const serviceVal = serviceSelect.value;
+      const dateVal = dateInput.value;
+      const timeVal = timeSlotSelect.value;
+      const checkedFormat = document.querySelector('input[name="classType"]:checked');
+      const formatVal = checkedFormat ? checkedFormat.value : 'In-Studio Class';
+      const noteVal = document.getElementById('note').value.trim();
 
-      if (!isNameValid || !isPhoneValid || !isServiceValid || !isDateValid) {
+      let hasError = false;
+
+      const isNameValid = nameVal.length >= 2;
+      document.getElementById('group-name').classList.toggle('has-error', !isNameValid);
+      if (!isNameValid) hasError = true;
+
+      const isPhoneValid = /^[6-9]\d{9}$/.test(phoneVal);
+      document.getElementById('group-phone').classList.toggle('has-error', !isPhoneValid);
+      if (!isPhoneValid) hasError = true;
+
+      const isEmailValid = isValidEmail(emailVal);
+      document.getElementById('group-email').classList.toggle('has-error', !isEmailValid);
+      if (!isEmailValid) hasError = true;
+
+      const isServiceValid = Boolean(serviceVal);
+      document.getElementById('group-service').classList.toggle('has-error', !isServiceValid);
+      if (!isServiceValid) hasError = true;
+
+      const isDateValid = Boolean(dateVal) && dateVal >= today;
+      document.getElementById('group-date').classList.toggle('has-error', !isDateValid);
+      if (!isDateValid) hasError = true;
+
+      if (hasError) {
+        const firstErr = form.querySelector('.form-group.has-error input, .form-group.has-error select');
+        if (firstErr) firstErr.focus();
         return;
       }
 
-      // Payload
-      const payload = {
-        name: nameInput.value.trim(),
-        phone: phoneInput.value.trim(),
-        service: serviceSelect.value,
-        date: dateInput.value,
-        note: document.getElementById('note').value.trim()
-      };
-
-      // Loading state
       submitBtn.classList.add('btn--loading');
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Processing Booking...';
+      submitBtn.textContent = 'Confirming Seat...';
+
+      const payload = {
+        name: nameVal,
+        phone: phoneVal,
+        email: emailVal,
+        service: serviceVal,
+        date: dateVal,
+        timeSlot: timeVal,
+        classType: formatVal,
+        note: noteVal
+      };
 
       try {
-        const response = await createBooking(payload);
-        if (response.success) {
-          form.reset();
-          dateInput.value = today;
+        const res = await createBooking(payload);
+        if (res.success) {
+          if (successBookingName) successBookingName.textContent = nameVal;
+          if (successBookingService) successBookingService.textContent = serviceVal;
+          if (successBookingDate) successBookingDate.textContent = new Date(dateVal).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+
+          form.style.display = 'none';
           successBox.classList.add('visible');
           successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
-          throw new Error(response.message || 'Booking failed');
+          throw new Error(res.message || 'Booking submission failed');
         }
       } catch (err) {
-        console.error('Booking failed:', err);
-        errorBox.textContent = `❌ ${err.message || 'Unable to connect to server. Please try again or call us directly at +91 98765 43210.'}`;
+        errorBox.textContent = `❌ ${err.message || 'Unable to submit booking. Please call us directly at +91 98765 43210.'}`;
         errorBox.classList.add('visible');
         errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } finally {
         submitBtn.classList.remove('btn--loading');
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Confirm Booking';
+        submitBtn.textContent = 'Confirm My Booking';
       }
     });
   </script>

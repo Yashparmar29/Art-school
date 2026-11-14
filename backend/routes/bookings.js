@@ -16,7 +16,7 @@ const memoryBookings = [];
 // ─── POST / — Create a booking ──────────────────────────────────────────────
 router.post('/', async (req, res) => {
   try {
-    const { name, phone, service, date, note } = req.body;
+    const { name, phone, email, service, date, timeSlot, classType, note } = req.body;
 
     // --- Validation ---
     const errors = [];
@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
     }
     if (!phone) {
       errors.push('Phone is required');
-    } else if (!/^[6-9]\d{9}$/.test(phone)) {
+    } else if (!/^[6-9]\d{9}$/.test(phone.replace(/\D/g, '').slice(-10))) {
       errors.push('Please enter a valid 10-digit Indian phone number (starting with 6-9)');
     }
     if (!service || !service.trim()) {
@@ -43,8 +43,11 @@ router.post('/', async (req, res) => {
     const bookingData = {
       name: name.trim(),
       phone: phone.trim(),
+      email: email ? email.trim().toLowerCase() : '',
       service: service.trim(),
       date: date.trim(),
+      timeSlot: timeSlot ? timeSlot.trim() : 'Morning (10:00 AM - 12:00 PM)',
+      classType: classType ? classType.trim() : 'In-Studio Class',
       note: note ? note.trim() : '',
       status: 'pending',
       createdAt: new Date().toISOString()

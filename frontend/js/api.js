@@ -3,9 +3,13 @@
  * Switch API_BASE_URL between local dev and deployed backend.
  */
 export const API_BASE_URL = window.API_BASE_URL || (
-  window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? 'http://localhost:5000'
-    : 'https://create-art-school.onrender.com'
+  window.location.protocol === 'http:' || window.location.protocol === 'https:'
+    ? (window.location.port === '5000'
+        ? ''
+        : (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? 'http://localhost:5000'
+            : 'https://create-art-school.onrender.com'))
+    : 'http://localhost:5000'
 );
 
 /** Generic fetch wrapper with error handling */
