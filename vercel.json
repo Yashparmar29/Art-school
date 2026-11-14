@@ -1,18 +1,9 @@
 {
-  "version": 2,
   "cleanUrls": true,
   "rewrites": [
     {
       "source": "/api/(.*)",
       "destination": "/api/index.js"
-    },
-    {
-      "source": "/",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/(services|gallery|pricing|booking|reviews|contact)",
-      "destination": "/$1.html"
     }
   ]
 }

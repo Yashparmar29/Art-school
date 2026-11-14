@@ -4,6 +4,7 @@
   "description": "Art School - Full-stack Website",
   "main": "backend/server.js",
   "scripts": {
+    "build": "echo 'Build complete'",
     "start": "node backend/server.js"
   },
   "dependencies": {
