@@ -95,17 +95,18 @@ app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// ─── Static Files (Production) ──────────────────────────────────────────────
-if (process.env.NODE_ENV === 'production') {
-  const frontendPath = path.join(__dirname, '..', 'frontend');
-  if (fs.existsSync(frontendPath)) {
-    app.use(express.static(frontendPath));
+// ─── Static Files & Frontend Serving ─────────────────────────────────────────
+const frontendPath = path.join(__dirname, '..', 'frontend');
+if (fs.existsSync(frontendPath)) {
+  app.use(express.static(frontendPath));
 
-    // SPA fallback — serve index.html for any unmatched route
-    app.get('*', (_req, res) => {
-      res.sendFile(path.join(frontendPath, 'index.html'));
-    });
-  }
+  // Fallback to index.html for non-API routes that don't match a static file
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api')) {
+      return next();
+    }
+    res.sendFile(path.join(frontendPath, 'index.html'));
+  });
 }
 
 // ─── Global Error Handler ───────────────────────────────────────────────────

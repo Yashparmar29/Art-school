@@ -28,6 +28,20 @@ const reviewSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Course is required'],
     },
+    title: {
+      type: String,
+      trim: true,
+      default: '',
+    },
+    role: {
+      type: String,
+      trim: true,
+      default: 'Student Artist',
+    },
+    helpfulCount: {
+      type: Number,
+      default: 0,
+    },
   },
   { timestamps: true }
 );

@@ -15,7 +15,7 @@ const memoryContacts = [];
 // ─── POST / — Submit a contact message ──────────────────────────────────────
 router.post('/', async (req, res) => {
   try {
-    const { name, email, message } = req.body;
+    const { name, email, phone, subject, preferredContact, message } = req.body;
 
     const errors = [];
     if (!name || !name.trim()) errors.push('Name is required');
@@ -33,6 +33,9 @@ router.post('/', async (req, res) => {
     const contactData = {
       name: name.trim(),
       email: email.trim().toLowerCase(),
+      phone: phone ? phone.trim() : '',
+      subject: subject ? subject.trim() : 'General Inquiry',
+      preferredContact: preferredContact ? preferredContact.trim() : 'Email',
       message: message.trim(),
       createdAt: new Date().toISOString(),
     };
@@ -45,7 +48,11 @@ router.post('/', async (req, res) => {
 
     return res.status(201).json({
       success: true,
-      message: 'Message sent successfully!',
+      message: 'Message sent successfully! Our studio team will get back to you shortly.',
+      data: {
+        name: contactData.name,
+        subject: contactData.subject
+      }
     });
   } catch (err) {
     if (err.name === 'ValidationError') {

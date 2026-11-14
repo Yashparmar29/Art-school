@@ -28,5 +28,6 @@ export async function getServices() { return apiFetch('/api/services'); }
 export async function createBooking(data) { return apiFetch('/api/bookings', { method: 'POST', body: JSON.stringify(data) }); }
 export async function getReviews() { return apiFetch('/api/reviews'); }
 export async function createReview(data) { return apiFetch('/api/reviews', { method: 'POST', body: JSON.stringify(data) }); }
+export async function markReviewHelpful(reviewId) { return apiFetch(`/api/reviews/${reviewId}/helpful`, { method: 'POST' }); }
 export async function sendContact(data) { return apiFetch('/api/contact', { method: 'POST', body: JSON.stringify(data) }); }
 export { API_BASE_URL };
