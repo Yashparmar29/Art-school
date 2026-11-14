@@ -9,6 +9,9 @@
 
 require('dotenv').config();
 
+const dns = require('dns');
+if (dns.setDefaultResultOrder) dns.setDefaultResultOrder('ipv4first');
+
 const mongoose = require('mongoose');
 const Service = require('./models/Service');
 const Review = require('./models/Review');
@@ -86,44 +89,82 @@ const reviews = [
   {
     name: 'Ananya Sharma',
     rating: 5,
+    title: 'Found my artistic voice & confidence',
     comment:
       'Create Art School has been an incredible experience! The painting classes helped me discover a style I never knew I had. The teachers are patient and truly passionate about art.',
     course: 'Painting',
+    role: 'Adult Hobbyist',
+    helpfulCount: 18,
   },
   {
     name: 'Rohan Mehta',
     rating: 4,
+    title: 'Energizing weekend creative escape',
     comment:
       'I joined the weekend workshops and they exceeded my expectations. Each session is packed with learning and you get a finished piece to take home. Highly recommended!',
     course: 'Weekend Workshops',
+    role: 'Working Professional',
+    helpfulCount: 12,
   },
   {
     name: 'Priya Iyer',
     rating: 5,
+    title: 'My daughter’s highlight of the week!',
     comment:
       'My daughter loves the Kids Art Classes! She comes home every week excited to show us what she created. The instructors are wonderful with children.',
     course: 'Kids Art Classes',
+    role: 'Parent of Student (Age 8)',
+    helpfulCount: 25,
   },
   {
     name: 'Vikram Desai',
     rating: 4,
+    title: 'Solid fundamentals from scratch',
     comment:
       'The Drawing course gave me a solid foundation. I went from barely being able to sketch to creating realistic portraits in just three months. Great curriculum!',
     course: 'Drawing',
+    role: 'Beginner Student',
+    helpfulCount: 9,
   },
   {
     name: 'Sneha Kulkarni',
     rating: 5,
+    title: 'Cracked admission to top design college!',
     comment:
       'Portfolio Prep was exactly what I needed for my design-school applications. The mentors provided detailed, constructive feedback and helped me curate my best work.',
     course: 'Portfolio Prep',
+    role: 'Design Aspirant',
+    helpfulCount: 31,
   },
   {
     name: 'Arjun Nair',
     rating: 4,
+    title: 'Top-tier digital illustration techniques',
     comment:
       'Digital Art classes here are top-notch. The instructor breaks down complex tools into simple steps. I am now confident using Photoshop and Procreate for my freelance projects.',
     course: 'Digital Art',
+    role: 'Freelance Illustrator',
+    helpfulCount: 15,
+  },
+  {
+    name: 'Meera Nambiar',
+    rating: 5,
+    title: 'Therapeutic and deeply fulfilling watercolors',
+    comment:
+      'The watercolor sessions are pure therapy. Learning the fluidity of wet-on-wet painting under master guidance in their Koramangala studio changed how I spend my weekends.',
+    course: 'Watercolor',
+    role: 'Intermediate Painter',
+    helpfulCount: 11,
+  },
+  {
+    name: 'Karan Joshi',
+    rating: 5,
+    title: 'Fast, intuitive urban sketching methods',
+    comment:
+      'Loved the urban sketching sessions! We took our sketchbooks around Koramangala cafes and parks, capturing live city moments with quick ink and wash. Outstanding instructors.',
+    course: 'Sketching',
+    role: 'Architecture Student',
+    helpfulCount: 14,
   },
 ];
 

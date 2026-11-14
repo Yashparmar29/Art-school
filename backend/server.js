@@ -7,6 +7,9 @@
 
 require('dotenv').config();
 
+const dns = require('dns');
+if (dns.setDefaultResultOrder) dns.setDefaultResultOrder('ipv4first');
+
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
